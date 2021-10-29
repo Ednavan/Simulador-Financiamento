@@ -1,0 +1,1 @@
+var sincronizando = angular.module('sincronizando', ['ngRoute'])

@@ -8,15 +8,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 
+    <script src="app.module.js"></script>
+    <script src="route.js"></script>
+
+    <script src="services/serviceEdit/serviceEdit.js"></script>
+    <script src="services/servicePost/servicePost.js"></script>
+
     <link rel="stylesheet" href="style.css">
 
     <script src="tela-Inicial/telaInicial.controller.js"></script>
     <script src="telaAprovado/telaAprovado.controller.js"></script>
-    <script src="telaDadosImovelValido/telaDadosImovel.js"></script>
+    <script src="telaDadosImovelValido/telaDadosImovel.controller.js"></script>
+    <script src="telaDadosProponenteValido/telaDadosProponente.controller.js"></script>
+    <script src="telaReprovado/telaReprovado.controller.js"></script>
 
     <title>Simulador de Financiamentos</title>
 </head>
 <body>
-    
+    <div ng-view></div>
 </body>
 </html>

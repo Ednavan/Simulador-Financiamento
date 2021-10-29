@@ -5,6 +5,9 @@ angular.module("sincronizando").config(function($routeProvider){
     }).when('/TelaDadosProponente',{
         controller: 'ctrlTelaDadosProponent',
         templateUrl: 'telaDadosProponente/telaDadosProponente.html'
+    }).when('/TelaDadosImovel', {
+        controller: 'ctrlTelaDadosImovel',
+        templateUrl: 'telaDadosImovel/telaDadosImovel.html'
     })
     .otherwise('telaInicio')
 })

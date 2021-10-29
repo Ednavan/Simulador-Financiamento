@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{tituloHeadPage}}</title>
 </head>
 <body>
     <header id="menuTitulo">
@@ -19,6 +19,7 @@
 
     <main>
         <section>
+            <form>
             <input type="text" placeholder="Nome completo">
             <input type="text" placeholder="Profissão">
             <input type="text" placeholder="CPF">
@@ -28,7 +29,8 @@
             <input type="text" placeholder="Celular">
             
             <button>CANCELAR</button>
-            <button>CONTINUAR</button>
+            <button ng-click="irProximaPage()">CONTINUAR</button>
+            </form>
         </section>
     </main>
 

@@ -8,6 +8,9 @@ angular.module("sincronizando").config(function($routeProvider){
     }).when('/TelaDadosImovel', {
         controller: 'ctrlTelaDadosImovel',
         templateUrl: 'telaDadosImovel/telaDadosImovel.html'
+    }).when('/statusAprovado',{
+        controller: 'ctrlStatusAprovado',
+        templateUrl: 'telaAprovado/telaAprovado.html'
     })
-    .otherwise('telaInicio')
+    .otherwise('/telaInicio')
 })

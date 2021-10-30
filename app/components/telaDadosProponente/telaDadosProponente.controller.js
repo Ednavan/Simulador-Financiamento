@@ -19,6 +19,6 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
         }
         $location.search(recebendoDados)
         console.log(recebendoDados)
-        // $location.path('/TelaDadosImovel')
+        $location.path('/TelaDadosImovel')
     }
 })

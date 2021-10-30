@@ -20,16 +20,16 @@
     <main>
         <section>
             <form>
-            <input type="text" placeholder="Nome completo">
-            <input type="text" placeholder="Profissão">
-            <input type="text" placeholder="CPF">
-            <input type="text" placeholder="email">
-            <input type="text" placeholder="Data de nascimento">
-            <input type="text" placeholder="CEP">
-            <input type="text" placeholder="Celular">
+            <input type="text" ng-model="infoNomeCompleto" placeholder="Nome completo">
+            <input type="text" ng-model="infoProfissao" placeholder="Profissão">
+            <input type="text" ng-model="infoCPF" placeholder="CPF">
+            <input type="text" ng-model="infoEmail" placeholder="email">
+            <input type="text" ng-model="infoDataNascimento" placeholder="Data de nascimento">
+            <input type="text" ng-model="infoCEP" placeholder="CEP">
+            <input type="text" ng-model="infoCelular" placeholder="Celular">
             
             <button>CANCELAR</button>
-            <button ng-click="irProximaPage()">CONTINUAR</button>
+            <button ng-click="irProximaPage('infoNomeCompleto', 'infoProfissao', 'infoCPF', 'infoEmail','infoDataNascimento','infoCEP','infoCelular')">CONTINUAR</button>
             </form>
         </section>
     </main>

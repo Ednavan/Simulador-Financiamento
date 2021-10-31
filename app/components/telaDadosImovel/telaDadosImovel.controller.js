@@ -26,9 +26,9 @@ sincronizando.controller('ctrlTelaDadosImovel', function($scope, $location, $htt
 
 
     $scope.irProximaPage = function(){
-        var verDados = $location.search()
-         console.log(verDados)
+        console.log(verDados)
         console.log('segunda tela')
+        var verDados = $location.search()
         var identificaDadosCadastrados = {
             listaNomes: verDados.dadosDoNome,
             listaProfissao: verDados.dadosDaProfissao,
@@ -51,7 +51,7 @@ sincronizando.controller('ctrlTelaDadosImovel', function($scope, $location, $htt
         $http({
             url: 'http://localhost:3000/bancoDeListaDados/',
             method: 'POST',
-            data: $scope.data
+            data: identificaDadosCadastrados
         }).then(function(){
             console.log('sucess')
         })
@@ -59,7 +59,7 @@ sincronizando.controller('ctrlTelaDadosImovel', function($scope, $location, $htt
     $http.get('http://localhost:3000/bancoDeListaDados/').
     then(function(res){
         (console.log(res))
-        $scope.bancoDeListaDados = res.data
+        $scope.bancoDeListaDados = res.identificaDadosCadastrados
     })
     
     // $location.path('/TelaDadosProponente')

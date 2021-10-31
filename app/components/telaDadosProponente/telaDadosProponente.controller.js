@@ -6,13 +6,13 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
      
         var recebendoDados = {
             
-            dadosDoNome:  $scope.infoNomeCompleto,
-            dadosDaProfissao: $scope.infoProfissao,
-            dadosDoCpf: $scope.infoCPF,
-            dadosDoEmail: $scope.infoEmail,
-            dadosDoNascimento: $scope.infoDataNascimento,
-            dadosDoCep: $scope.infoCEP,
-            dadosDoCelular: $scope.infoCelular
+            dadosDoNome:  $scope.data.infoNomeCompleto,
+            dadosDaProfissao: $scope.data.infoProfissao,
+            dadosDoCpf: $scope.data.infoCPF,
+            dadosDoEmail: $scope.data.infoEmail,
+            dadosDoNascimento: $scope.data.infoDataNascimento,
+            dadosDoCep: $scope.data.infoCEP,
+            dadosDoCelular: $scope.data.infoCelular
 
            
             

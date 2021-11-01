@@ -14,24 +14,48 @@
     </header>
 
     <nav>
-        <h2>Dados Proponente</h2>
+        <h2>Dados proponente</h2>
     </nav>
 
     <main>
         <section>
             <form>
-            <input type="text" ng-model="data.infoNomeCompleto"  placeholder="Nome completo">
-            <input type="text" ng-model="data.infoProfissao" placeholder="Profissão">
-            <input type="text" ng-model="data.infoCPF" placeholder="CPF">
-            <input type="text" ng-model="data.infoEmail" placeholder="email">
-            <input type="text" ng-model="data.infoDataNascimento" placeholder="Data de nascimento">
-            <input type="text" ng-model="data.infoCEP" placeholder="CEP">
-            <input type="text" ng-model="data.infoCelular" placeholder="Celular">
-                {{test}}
+            <div class="label-float">
+                <input type="text" ng-model="data.infoNomeCompleto" placeholder=" ">
+                <label>Nome completo</label>
+            </div>
+            <div class="label-float">
+            <input type="text" ng-model="data.infoProfissao" placeholder=" ">
+            <label>Profissão</label>
+            </div>
+            <div class="label-float">
+            <input type="text" ng-model="data.infoCPF" placeholder=" ">
+            <label>CPF</label>
+            </div>
+            <div class="label-float">
+            <input type="text" ng-model="data.infoEmail" placeholder=" ">
+            <label>E-mail</label>
+            </div>
+            <div class="label-float">
+            <input type="text" ng-model="data.infoDataNascimento" placeholder=" ">
+            <label>Data de nascimento</label>
+            </div>
+            <div class="label-float">
+            <input type="text" ng-model="data.infoCEP" placeholder=" ">
+            <label>CEP</label>
+            </div>
+            <div class="label-float">
+            <input type="text" ng-model="data.infoCelular" placeholder=" ">
+            <label>Celular</label>
+            </div>
             <button>CANCELAR</button>
             <button ng-click="irProximaPage('infoNomeCompleto', 'infoProfissao', 'infoCPF', 'infoEmail','infoDataNascimento','infoCEP','infoCelular')">CONTINUAR</button>
             </form>
         </section>
+
+
+
+        
     </main>
 
 </body>

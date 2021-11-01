@@ -1,20 +1,8 @@
 sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
     $scope.tituloHeadPage = "Dados Proponente"
+    
     $scope.data = {};
-    var  editar = $location.search()
-    console.log('PRIMEIRA PAGINA DADOS PROPONENTE',editar)
-
-
-    if(editar != {}){
-        $scope.data.infoNomeCompleto = editar.listaNomes;
-        $scope.data.infoProfissao = editar.listaProfissao;
-        $scope.data.infoCPF = editar.listaCpf;
-        $scope.data.infoEmail = editar.listaEmail;
-        $scope.data.infoDataNascimento = editar.listaNascimento;
-        $scope.data.infoCEP = editar.listaCep;
-        $scope.data.infoCelular = editar.listaCelular
-    }
-
+   
     $scope.irProximaPage = function(nome, profi, cpf, email, nascimento, cep, celular){
        
         var recebendoDados = {      
@@ -30,5 +18,22 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
         console.log(recebendoDados)
         $location.path('/TelaDadosImovel')
     }
+    
+
+    /**@param editar foi definida uma variavel responsavel por receber os dados como objeto, para que seja capazes de mostrar e consequentemente realizar alterações*/
+    var  editar = $location.search()
+    console.log('PRIMEIRA PAGINA DADOS PROPONENTE',editar)
+
+
+    if(editar != {}){
+        $scope.data.infoNomeCompleto = editar.listaNomes;
+        $scope.data.infoProfissao = editar.listaProfissao;
+        $scope.data.infoCPF = editar.listaCpf;
+        $scope.data.infoEmail = editar.listaEmail;
+        $scope.data.infoDataNascimento = editar.listaNascimento;
+        $scope.data.infoCEP = editar.listaCep;
+        $scope.data.infoCelular = editar.listaCelular
+    }
+
 
 })

@@ -1,8 +1,10 @@
-sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location, $http){
+sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
     $scope.tituloHeadPage = "Dados Proponente"
     $scope.data = {};
     var  editar = $location.search()
-    console.log('PRIMEIRA PAGINA DE TESTE',editar)
+    console.log('PRIMEIRA PAGINA DADOS PROPONENTE',editar)
+
+
     if(editar != {}){
         $scope.data.infoNomeCompleto = editar.listaNomes;
         $scope.data.infoProfissao = editar.listaProfissao;
@@ -11,16 +13,11 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location, $h
         $scope.data.infoDataNascimento = editar.listaNascimento;
         $scope.data.infoCEP = editar.listaCep;
         $scope.data.infoCelular = editar.listaCelular
-        
-
     }
 
-    console.log('proponente')
     $scope.irProximaPage = function(nome, profi, cpf, email, nascimento, cep, celular){
        
-     
-        var recebendoDados = {
-            
+        var recebendoDados = {      
             dadosDoNome:  $scope.data.infoNomeCompleto,
             dadosDaProfissao: $scope.data.infoProfissao,
             dadosDoCpf: $scope.data.infoCPF,
@@ -28,38 +25,10 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location, $h
             dadosDoNascimento: $scope.data.infoDataNascimento,
             dadosDoCep: $scope.data.infoCEP,
             dadosDoCelular: $scope.data.infoCelular
-
-           
-            
         }
         $location.search(recebendoDados)
         console.log(recebendoDados)
-
-
-
-
-        // $scope.cod = recebendoDados;
-        // console.log('editando: ', $scope.cod)
-
-        // $http({
-        //     url: recebendoDados + $scope.cod,
-        //     data: $scope.cod,
-        
-        // }).then(function(tratamento){
-        //     console.log("SUCCESS")
-        //     console.log(tratamento)
-        // }).catch(function(){
-        //     console.log("não foi possivel")
-        // })
-        
-
-
         $location.path('/TelaDadosImovel')
     }
 
-//    var a = $location.search()
-//    console.log(a)
-//    var verNome = {
-//    result: $scope.data.infoNomeCompleto.verNome
-//     }
 })

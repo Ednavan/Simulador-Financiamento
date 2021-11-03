@@ -20,7 +20,8 @@
     <main>
     <section>
     <form>
-    <select ng-model="data.imovel"name="" id="" aria-placeholder="Tipo do Imóvel"></select>
+    <select ng-options="listagemTipos for listagemTipos in selecImovelCerto" ng-model="data.imovel"></select>
+
     <input ng-model="data.renda" type="number" placeholder="Renda Mensal">
     <input ng-model="data.valor" type="number" placeholder="Valor do Imóvel">
     <input ng-model="data.valorEntrada" type="number" placeholder="Valor da entrada">

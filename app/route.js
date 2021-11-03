@@ -16,4 +16,5 @@ angular.module("sincronizando").config(function($routeProvider){
         templateUrl: '../app/components/telaReprovado/telaReprovado.html'
     })
     .otherwise('/telaInicio')
+
 })

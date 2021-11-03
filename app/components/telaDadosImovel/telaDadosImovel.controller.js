@@ -1,5 +1,7 @@
 sincronizando.controller('ctrlTelaDadosImovel', function($scope, $location, $http){
     $scope.tituloHeadPageImovel = "Dados do Imóvel"
+
+
     console.log('imovel')
     $scope.irProximaPage = function(){
         console.log(verDados)
@@ -51,18 +53,29 @@ sincronizando.controller('ctrlTelaDadosImovel', function($scope, $location, $htt
 
 
     }
+
+
     $http.get('http://localhost:3000/bancoDeListaDados/').
     then(function(res){
         (console.log(res))
        
-        $scope.bancoDeListaDados = res.identificaDadosCadastrados
-
-         
-        
+        $scope.bancoDeListaDados = res.identificaDadosCadastrados        
     })
     
-
     $scope.voltarPage = function(){      
         $location.path('/TelaDadosProponente')
     }
+
+    $.ajax({
+        type: "get",
+        url: "http://localhost:3000/tiposImoveis",
+        data: { tipos: $("#ddlTipoTelefone").val() },
+        dataType: 'json',
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            $scope.selecImovelCerto = data;
+        }
+    });
+    
+    
 })

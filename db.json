@@ -1,46 +1,14 @@
 {
   "bancoDeListaDados": [
-    {
-      "listaNomes": "test",
-      "listaProfissao": "teste",
-      "listaCpf": "222",
-      "listaEmail": "test",
-      "listaNascimento": "222",
-      "listaCep": "222",
-      "listaCelular": "222",
-      "formularioRenda": 2,
-      "formularioValor": 2,
-      "formularioValorEntrada": 2,
-      "formularioQtdParcela": 2,
-      "id": 1
-    },
-    {
-      "listaNomes": "ver",
-      "listaProfissao": "ver",
-      "listaCpf": "222",
-      "listaEmail": "ver",
-      "listaNascimento": "55555",
-      "listaCep": "888888",
-      "listaCelular": "999999",
-      "formularioRenda": 2,
-      "formularioValor": 2,
-      "formularioValorEntrada": 2,
-      "formularioQtdParcela": 2,
-      "id": 2
-    },
-    {
-      "listaNomes": "ggg",
-      "listaProfissao": "ggg",
-      "listaCpf": "23232323",
-      "listaEmail": "ggg@",
-      "listaNascimento": "2323232",
-      "listaCep": "2323",
-      "listaCelular": "2323",
-      "formularioRenda": 0,
-      "formularioValor": 0,
-      "formularioValorEntrada": 0,
-      "formularioQtdParcela": 0,
-      "id": 3
-    }
+  
+  ],
+  "tiposImoveis":[
+    "Kitnet",
+    "Flat",
+    "Apartamento",
+    "Edícula",
+    "Sobrado",
+    "Bangalô",
+    "Casa Geminada"
   ]
 }

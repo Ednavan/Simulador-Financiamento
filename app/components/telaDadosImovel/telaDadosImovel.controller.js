@@ -26,7 +26,7 @@ sincronizando.controller('ctrlTelaDadosImovel', function($scope, $location, $htt
 
         console.log('chegou')
            
-        // var a = (($scope.data.valor - $scope.data.valorEntrada) + ((($scope.data.qtdParcelas/12) * 10/100))) / $scope.data.qtdParcelas <= ($scope.data.renda * 0,3)
+       
         var b = ($scope.data.valor - $scope.data.valorEntrada + ((($scope.data.qtdParcelas/12) * 10/100) *($scope.data.valor - $scope.data.valorEntrada))) / $scope.data.qtdParcelas 
         console.log('valor de b',b)
         if(b <= ($scope.data.renda * 0,3)){
@@ -34,6 +34,8 @@ sincronizando.controller('ctrlTelaDadosImovel', function($scope, $location, $htt
         }else{
             $location.path('/statusReprovado')
         }
+
+      
       
         // $http({
         //     url: 'http://localhost:3000/bancoDeListaDados',
@@ -45,6 +47,7 @@ sincronizando.controller('ctrlTelaDadosImovel', function($scope, $location, $htt
         // }).catch(function(){
         //     console.log('não foi possivel estabelecer conexão')
         // });
+
 
 
     }
@@ -59,26 +62,7 @@ sincronizando.controller('ctrlTelaDadosImovel', function($scope, $location, $htt
     // })
     
 
-    $scope.voltarPage = function(){
-        var analisedesevolv = $location.search()
-        var recuperacaoVoltePage = {
-            listaNomes: analisedesevolv.dadosDoNome,
-            listaProfissao: analisedesevolv.dadosDaProfissao,
-            listaCpf: analisedesevolv.dadosDoCpf,
-            listaEmail: analisedesevolv.dadosDoEmail,
-            listaNascimento: analisedesevolv.dadosDoNascimento,
-            listaCep: analisedesevolv.dadosDoCep,
-            listaCelular: analisedesevolv.dadosDoCelular,
-        }
-        $location.search(recuperacaoVoltePage)
-        console.log('clicou em voltar')
-        console.log(recuperacaoVoltePage)
-
-        $scope.cod = recuperacaoVoltePage;
-        console.log('editando: ', $scope.cod)
-      
-      
+    $scope.voltarPage = function(){      
         $location.path('/TelaDadosProponente')
-
     }
 })

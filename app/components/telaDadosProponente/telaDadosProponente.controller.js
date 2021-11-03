@@ -27,13 +27,13 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
 
 
     if(editar != {}){
-        $scope.data.infoNomeCompleto = editar.listaNomes;
-        $scope.data.infoProfissao = editar.listaProfissao;
-        $scope.data.infoCPF = editar.listaCpf;
-        $scope.data.infoEmail = editar.listaEmail;
-        $scope.data.infoDataNascimento = editar.listaNascimento;
-        $scope.data.infoCEP = editar.listaCep;
-        $scope.data.infoCelular = editar.listaCelular
+        $scope.data.infoNomeCompleto = editar.dadosDoNome;
+        $scope.data.infoProfissao = editar.dadosDaProfissao;
+        $scope.data.infoCPF = editar.dadosDoCpf;
+        $scope.data.infoEmail = editar.dadosDoEmail;
+        $scope.data.infoDataNascimento = editar.dadosDoNascimento;
+        $scope.data.infoCEP = editar.dadosDoCep;
+        $scope.data.infoCelular = editar.dadosDoCelular
     }
 
     $scope.irParaHome = function(){

@@ -20,8 +20,12 @@
     <main>
     <section>
     <form>
-    <select ng-options="listagemTipos for listagemTipos in selecImovelCerto" ng-model="data.imovel"></select>
-
+    <div  class="form-group">
+        
+    <select class="form-control" name="imovel" id="imovel" ng-options=" listagemTipos for listagemTipos in selecImovelCerto"  ng-model="data.imovel">
+        <option value="">Tipo do Imóvel</option>
+    </select>
+    </div>   
     <input ng-model="data.renda" type="number" placeholder="Renda Mensal">
     <input ng-model="data.valor" type="number" placeholder="Valor do Imóvel">
     <input ng-model="data.valorEntrada" type="number" placeholder="Valor da entrada">
@@ -31,6 +35,13 @@
     <button ng-click="irProximaPage()">SIMULAR</button>
     </form>
     </section>
+    <!-- <div class="form-group">
+        <label>Uniforme da Equipe</label>
+        <select class="form-control" name="uniforme" id="uniforme"
+        ng-model="uniforme" ng-options="x.nomeuniforme for x in listaUniformes">
+        <option value="">Selecione o uniforme</option>
+ </select>
+     </div> -->
     </main>
 </body>
 </html>

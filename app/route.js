@@ -11,6 +11,9 @@ angular.module("sincronizando").config(function($routeProvider){
     }).when('/statusAprovado',{
         controller: 'ctrlStatusAprovado',
         templateUrl: '../app/components/telaAprovado/telaAprovado.html'
+    }).when('/statusReprovado',{
+        controller: 'ctrlStatusReprovado',
+        templateUrl: '../app/components/telaReprovado/telaReprovado.html'
     })
     .otherwise('/telaInicio')
 })

@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{tituloHeadPage}}</title>
 </head>
+
 <body>
     <header id="menuTitulo">
         <div id="titulo">
-           <h1>Simulador de Financiamentos</h1>
+            <h1>Simulador de Financiamentos</h1>
         </div>
     </header>
 
@@ -20,36 +22,37 @@
     <main>
         <section>
             <form>
-            <div class="label-float">
-                <input type="text" ng-model="data.infoNomeCompleto" placeholder=" ">
-                <label>Nome completo</label>
-            </div>
-            <div class="label-float">
-            <input type="text" ng-model="data.infoProfissao" placeholder=" ">
-            <label>Profissão</label>
-            </div>
-            <div class="label-float">
-            <input type="text" ng-model="data.infoCPF" placeholder=" ">
-            <label>CPF</label>
-            </div>
-            <div class="label-float">
-            <input type="text" ng-model="data.infoEmail" placeholder=" ">
-            <label>E-mail</label>
-            </div>
-            <div class="label-float">
-            <input type="text" ng-model="data.infoDataNascimento" placeholder=" ">
-            <label>Data de nascimento</label>
-            </div>
-            <div class="label-float">
-            <input type="text" ng-model="data.infoCEP" placeholder=" ">
-            <label>CEP</label>
-            </div>
-            <div class="label-float">
-            <input type="text" ng-model="data.infoCelular" placeholder=" ">
-            <label>Celular</label>
-            </div>
-            <button>CANCELAR</button>
-            <button ng-click="irProximaPage('infoNomeCompleto', 'infoProfissao', 'infoCPF', 'infoEmail','infoDataNascimento','infoCEP','infoCelular')">CONTINUAR</button>
+                <div class="label-float">
+                    <input type="text" ng-model="data.infoNomeCompleto" placeholder=" ">
+                    <label>Nome completo</label>
+                </div>
+                <div class="label-float">
+                    <input type="text" ng-model="data.infoProfissao" placeholder=" ">
+                    <label>Profissão</label>
+                </div>
+                <div class="label-float">
+                    <input type="text" ng-model="data.infoCPF" placeholder=" ">
+                    <label>CPF</label>
+                </div>
+                <div class="label-float">
+                    <input type="text" ng-model="data.infoEmail" placeholder=" ">
+                    <label>E-mail</label>
+                </div>
+                <div class="label-float">
+                    <input type="text" ng-model="data.infoDataNascimento" placeholder=" ">
+                    <label>Data de nascimento</label>
+                </div>
+                <div class="label-float">
+                    <input type="text" ng-model="data.infoCEP" placeholder=" ">
+                    <label>CEP</label>
+                </div>
+                <div class="label-float">
+                    <input type="text" ng-model="data.infoCelular" placeholder=" ">
+                    <label>Celular</label>
+                </div>
+                <button ng-click="irParaHome()">CANCELAR</button>
+                <button
+                    ng-click="irProximaPage('infoNomeCompleto', 'infoProfissao', 'infoCPF', 'infoEmail','infoDataNascimento','infoCEP','infoCelular')">CONTINUAR</button>
             </form>
         </section>
 

@@ -1,16 +1,6 @@
 {
   "bancoDeListaDados": [
     {
-      "listaNomes": "ednavan",
-      "listaProfissao": "dev",
-      "listaCpf": "32232",
-      "listaEmail": "ed@gmail.com",
-      "listaNascimento": "270065",
-      "listaCep": "5655658",
-      "listaCelular": "878484",
-      "formularioRenda": "45454545",
-      "formularioValor": "45454",
-      "formularioValorEntrada": "45454",
       "id": 1
     }
   ]

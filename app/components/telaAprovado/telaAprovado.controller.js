@@ -1,7 +1,7 @@
 sincronizando.controller('ctrlStatusAprovado', function($scope, $location){
     $scope.tituloPageAprovado = "Aprovado"
 
-    $scope.irParaInicio = function(){
+    $scope.irParaHome = function(){
         $location.path('/telaInicio')
     }
 })

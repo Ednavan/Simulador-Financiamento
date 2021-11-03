@@ -21,10 +21,10 @@
     <section>
     <form>
     <select ng-model="data.imovel"name="" id="" aria-placeholder="Tipo do Imóvel"></select>
-    <input ng-model="data.renda" type="text" placeholder="Renda Mensal">
-    <input ng-model="data.valor" type="text" placeholder="Valor do Imóvel">
-    <input ng-model="data.valorEntrada" type="text" placeholder="Valor da entrada">
-    <input type="text" placeholder="Em quantas parcela deseja parcelar?">
+    <input ng-model="data.renda" type="number" placeholder="Renda Mensal">
+    <input ng-model="data.valor" type="number" placeholder="Valor do Imóvel">
+    <input ng-model="data.valorEntrada" type="number" placeholder="Valor da entrada">
+    <input ng-model= "data.qtdParcelas" type="number" placeholder="Em quantas parcela deseja parcelar?">
        
     <button ng-click="voltarPage()">VOLTAR</button>
     <button ng-click="irProximaPage()">SIMULAR</button>

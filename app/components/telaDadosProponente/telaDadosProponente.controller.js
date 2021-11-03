@@ -1,7 +1,7 @@
 sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
     $scope.tituloHeadPage = "Dados Proponente"
     
-    $scope.data = {};
+ 
    
     $scope.irProximaPage = function(nome, profi, cpf, email, nascimento, cep, celular){
        
@@ -18,10 +18,11 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
         console.log(recebendoDados)
         $location.path('/TelaDadosImovel')
     }
-    
 
+    $scope.data = {};
     /**@param editar foi definida uma variavel responsavel por receber os dados como objeto, para que seja capazes de mostrar e consequentemente realizar alterações*/
     var  editar = $location.search()
+    
     console.log('PRIMEIRA PAGINA DADOS PROPONENTE',editar)
 
 
@@ -35,5 +36,8 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
         $scope.data.infoCelular = editar.listaCelular
     }
 
+    $scope.irParaHome = function(){
+        $location.path('/telaInicio')
+    }
 
 })

@@ -17,26 +17,46 @@ sincronizando.controller('ctrlTelaDadosImovel', function($scope, $location, $htt
             formularioTipo: $scope.data.imovel,
             formularioRenda: $scope.data.renda,
             formularioValor: $scope.data.valor,
-            formularioValorEntrada: $scope.data.valorEntrada
+            formularioValorEntrada: $scope.data.valorEntrada,
+            formularioQtdParcela: $scope.data.qtdParcelas
         }
         
         $location.search(identificaDadosCadastrados)
         console.log(identificaDadosCadastrados)
 
         console.log('chegou')
-        $http({
-            url: 'http://localhost:3000/bancoDeListaDados/',
-            method: 'POST',
-            data: identificaDadosCadastrados
-        }).then(function(){
-            console.log('sucess')
-        })
+           
+        // var a = (($scope.data.valor - $scope.data.valorEntrada) + ((($scope.data.qtdParcelas/12) * 10/100))) / $scope.data.qtdParcelas <= ($scope.data.renda * 0,3)
+        var b = ($scope.data.valor - $scope.data.valorEntrada + ((($scope.data.qtdParcelas/12) * 10/100) *($scope.data.valor - $scope.data.valorEntrada))) / $scope.data.qtdParcelas 
+        console.log('valor de b',b)
+        if(b <= ($scope.data.renda * 0,3)){
+            $location.path('/statusAprovado')
+        }else{
+            $location.path('/statusReprovado')
+        }
+      
+        // $http({
+        //     url: 'http://localhost:3000/bancoDeListaDados',
+        //     method: 'POST',
+        //     data: identificaDadosCadastrados
+        // }).then(function(){
+        //   console.log('sucesso')
+        
+        // }).catch(function(){
+        //     console.log('não foi possivel estabelecer conexão')
+        // });
+
+
     }
-    $http.get('http://localhost:3000/bancoDeListaDados/').
-    then(function(res){
-        (console.log(res))
-        $scope.bancoDeListaDados = res.identificaDadosCadastrados
-    })
+    // $http.get('http://localhost:3000/bancoDeListaDados/').
+    // then(function(res){
+    //     (console.log(res))
+       
+    //     $scope.bancoDeListaDados = res.identificaDadosCadastrados
+
+         
+        
+    // })
     
 
     $scope.voltarPage = function(){
@@ -56,6 +76,7 @@ sincronizando.controller('ctrlTelaDadosImovel', function($scope, $location, $htt
 
         $scope.cod = recuperacaoVoltePage;
         console.log('editando: ', $scope.cod)
+      
       
         $location.path('/TelaDadosProponente')
 

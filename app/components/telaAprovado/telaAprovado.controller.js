@@ -9,16 +9,19 @@ sincronizando.controller('ctrlStatusAprovado', function($scope, $location){
 
   var ResultTotalValue= {
       dado1: DadosListagemValorTotal.formularioValor,
-      dado2: DadosListagemValorTotal.formularioValorEntrada
+      dado2: DadosListagemValorTotal.formularioValorEntrada,
+      dados3: DadosListagemValorTotal.formularioQtdParcela
   }
 
   
   console.log('valores', ResultTotalValue)
 
- $scope.sub = parseInt(ResultTotalValue.dado1) - parseInt(ResultTotalValue.dado2)
+ $scope.sub = parseFloat(ResultTotalValue.dado1) - parseFloat(ResultTotalValue.dado2)
   console.log($scope.sub)
 
 
+  $scope.calculandoParcelaInicial = ($scope.sub * ((100 + (10) * (ResultTotalValue.dados3/12)))/100)/ResultTotalValue.dados3
+  console.log($scope.calculandoParcelaInicial)
     
     $scope.irParaHome = function(){
 

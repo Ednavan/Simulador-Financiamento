@@ -27,8 +27,8 @@ sincronizando.controller('ctrlTelaDadosImovel', function($scope, $location, $htt
         console.log(identificaDadosCadastrados)
 
         console.log('chegou')
-           
-       
+    
+
         var b = ($scope.data.valor - $scope.data.valorEntrada + ((($scope.data.qtdParcelas/12) * 10/100) *($scope.data.valor - $scope.data.valorEntrada))) / $scope.data.qtdParcelas 
         console.log('valor de b',b)
         if(b <= ($scope.data.renda * 0,3)){
@@ -39,28 +39,28 @@ sincronizando.controller('ctrlTelaDadosImovel', function($scope, $location, $htt
 
       
       
-        $http({
-            url: 'http://localhost:3000/bancoDeListaDados',
-            method: 'POST',
-            data: identificaDadosCadastrados
-        }).then(function(){
-          console.log('sucesso')
+        // $http({
+        //     url: 'http://localhost:3000/bancoDeListaDados',
+        //     method: 'POST',
+        //     data: identificaDadosCadastrados
+        // }).then(function(){
+        //   console.log('sucesso')
         
-        }).catch(function(){
-            console.log('não foi possivel estabelecer conexão')
-        });
+        // }).catch(function(){
+        //     console.log('não foi possivel estabelecer conexão')
+        // });
 
 
 
     }
 
 
-    $http.get('http://localhost:3000/bancoDeListaDados/').
-    then(function(res){
-        (console.log(res))
+    // $http.get('http://localhost:3000/bancoDeListaDados/').
+    // then(function(res){
+    //     (console.log(res))
        
-        $scope.bancoDeListaDados = res.identificaDadosCadastrados        
-    })
+    //     $scope.bancoDeListaDados = res.identificaDadosCadastrados        
+    // })
     
     $scope.voltarPage = function(){      
         $location.path('/TelaDadosProponente')

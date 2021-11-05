@@ -1,8 +1,8 @@
 sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
     $scope.tituloHeadPage = "Dados Proponente"
     
- 
    
+    
     $scope.irProximaPage = function(nome, profi, cpf, email, nascimento, cep, celular){
        
         var recebendoDados = {      
@@ -41,3 +41,9 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
     }
 
 })
+
+$('#inputCpf').mask('000.000.000-00', {reverse: true});
+
+$('#celular').mask('(99) 99999-9999');
+
+$('#InputCep').mask('99999-999');

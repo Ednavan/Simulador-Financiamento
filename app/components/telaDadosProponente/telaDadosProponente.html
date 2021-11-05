@@ -21,44 +21,50 @@
 
     <main>
         <section>
-            <form >
+            <form name="customerForm">
                 <div class="label-float">
-                    <input type="text" ng-model="data.infoNomeCompleto" placeholder=" ">
+                    
+                    <input type="text" ng-pattern="/^[a-zA-ZáéíóúÁÉÍÓÚ\s]*$/" ng-minlength="3" ng-model="data.infoNomeCompleto" placeholder=" " required  >
+                   
                     <label>Nome completo</label>
+                      
                 </div>
+                
                 <div class="label-float">
-                    <input type="text" ng-model="data.infoProfissao" placeholder=" ">
+                    <input type="text" ng-model="data.infoProfissao" placeholder=" " required>
                     <label>Profissão</label>
                 </div>
                 <div class="label-float">
-                    <input type="text" ng-model="data.infoCPF" placeholder=" ">
+                    <input id="inputCpf"type="text" ng-model="data.infoCPF" placeholder=" " required>
                     <label>CPF</label>
                 </div>
                 <div class="label-float">
-                    <input type="text" ng-model="data.infoEmail" placeholder=" ">
+                    <input type="text" ng-model="data.infoEmail" placeholder=" " required>
                     <label>E-mail</label>
                 </div>
                 <div class="label-float">
-                    <input type="text" ng-model="data.infoDataNascimento" placeholder=" ">
+                    <input  type="date"   ng-model="data.infoDataNascimento" placeholder=" " required >
+                   
                     <label>Data de nascimento</label>
                 </div>
                 <div class="label-float">
-                    <input type="text" ng-model="data.infoCEP" placeholder=" ">
+                    <input id="InputCep" type="text" pattern="[0-9]{5}-[0-9]{3}" ng-model="data.infoCEP" placeholder=" " required="true">
                     <label>CEP</label>
                 </div>
                 <div class="label-float">
-                    <input type="text" ng-model="data.infoCelular" placeholder=" ">
+                    <input id="celular" type="text"  ng-model="data.infoCelular"  placeholder=" " required>
                     <label>Celular</label>
                 </div>
+                  
+                
                 <button ng-click="irParaHome()">CANCELAR</button>
-                <button 
-                    ng-click="irProximaPage('infoNomeCompleto', 'infoProfissao', 'infoCPF', 'infoEmail','infoDataNascimento','infoCEP','infoCelular')">CONTINUAR</button>
+                <button ng-click="irProximaPage('infoNomeCompleto', 'infoProfissao', 'infoCPF', 'infoEmail','infoDataNascimento','infoCEP','infoCelular')" ng-disabled="customerForm.$invalid">CONTINUAR</button>
             </form>
         </section>
 
 
 
-        
+       
     </main>
 
 </body>

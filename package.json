@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "angular-input-masks": "^4.4.1",
     "json-server": "^0.17.0"
   },
   "devDependencies": {},

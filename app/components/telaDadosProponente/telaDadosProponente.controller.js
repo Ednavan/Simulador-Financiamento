@@ -39,11 +39,13 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
     $scope.irParaHome = function(){
         $location.path('/telaInicio')
     }
-
+  
 })
 
 $('#inputCpf').mask('000.000.000-00', {reverse: true});
 
-$('#celular').mask('(99) 99999-9999');
+$('#inputCelular').mask(' (00) 0000-0000', {reverse:true})
 
-$('#InputCep').mask('99999-999');
+$('#InputCep').mask('00000-000', {reverse: true});
+
+

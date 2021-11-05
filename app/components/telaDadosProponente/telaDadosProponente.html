@@ -35,7 +35,7 @@
                     <label>Profissão</label>
                 </div>
                 <div class="label-float">
-                    <input id="inputCpf"type="text" ng-model="data.infoCPF" placeholder=" " required>
+                    <input id="inputCpf" type="text" ng-model="data.infoCPF" placeholder=" " required>
                     <label>CPF</label>
                 </div>
                 <div class="label-float">
@@ -48,14 +48,14 @@
                     <label>Data de nascimento</label>
                 </div>
                 <div class="label-float">
-                    <input id="InputCep" type="text" pattern="[0-9]{5}-[0-9]{3}" ng-model="data.infoCEP" placeholder=" " required="true">
+                    <input id="InputCep"  ng-model="data.infoCEP" placeholder=" " required>
                     <label>CEP</label>
                 </div>
                 <div class="label-float">
-                    <input id="celular" type="text"  ng-model="data.infoCelular"  placeholder=" " required>
+                    <input id="inputCelular" type="text"  ng-pattern="re" ng-model="data.infoCelular"  placeholder=" " required>
                     <label>Celular</label>
                 </div>
-                  
+                
                 
                 <button ng-click="irParaHome()">CANCELAR</button>
                 <button ng-click="irProximaPage('infoNomeCompleto', 'infoProfissao', 'infoCPF', 'infoEmail','infoDataNascimento','infoCEP','infoCelular')" ng-disabled="customerForm.$invalid">CONTINUAR</button>

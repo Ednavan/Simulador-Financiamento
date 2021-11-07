@@ -21,12 +21,12 @@
 
     <main>
         <section>
+      
             <form name="customerForm">
-                <div class="label-float">
                     
-                    <input type="text" ng-pattern="/^[a-zA-ZáéíóúÁÉÍÓÚ\s]*$/" ng-minlength="3" ng-model="data.infoNomeCompleto" placeholder=" " required  >
+                <input type="text" ng-pattern="/^[a-zA-ZáéíóúÁÉÍÓÚ\s]*$/" ng-minlength="3" ng-model="data.infoNomeCompleto" placeholder=" " required  >
                    
-                    <label>Nome completo</label>
+                <label>Nome completo</label>
                       
                 </div>
                 
@@ -43,7 +43,7 @@
                     <label>E-mail</label>
                 </div>
                 <div class="label-float">
-                    <input  type="date"   ng-model="data.infoDataNascimento" placeholder=" " required >
+                    <input name="dtnascimento" type="date" ng-model="data.infoDataNascimento"  placeholder=" " required >
                    
                     <label>Data de nascimento</label>
                 </div>

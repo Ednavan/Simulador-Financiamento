@@ -75,4 +75,3 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
     
 
 })
-dd

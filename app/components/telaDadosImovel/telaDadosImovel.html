@@ -42,8 +42,11 @@
         <option value="">Selecione o uniforme</option>
  </select>
      </div> -->
+   
 
-     <input inputmode="numeric" id="myInput" value="0,00">
+     <input type="text" ng-model="value" mask-currency="'R$'" config="{group:'.',decimal:',',indentation:' '}" />
+
+
     </main>
 </body>
 </html>

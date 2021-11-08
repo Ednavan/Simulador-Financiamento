@@ -72,6 +72,7 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
             $scope.selecImovelCerto = data;
         }
     });
-
+    
 
 })
+dd

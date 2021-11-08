@@ -26,27 +26,16 @@
         <option value="">Tipo do Imóvel</option>
     </select>
     </div>   
-    <input ng-model="data.renda" type="number" placeholder="Renda Mensal">
-    <input ng-model="data.valor" type="number" placeholder="Valor do Imóvel">
-    <input ng-model="data.valorEntrada" type="number" placeholder="Valor da entrada">
+    <input mask-currency="'R$'" config="{group:'.',decimal:',',indentation:' '}" ng-model="data.renda"  placeholder="Renda Mensal">
+    <input mask-currency="'R$'" config="{group:'.',decimal:',',indentation:' '}" ng-model="data.valor"  placeholder="Valor do Imóvel">
+    <input mask-currency="'R$'" config="{group:'.',decimal:',',indentation:' '}" ng-model="data.valorEntrada"  placeholder="Valor da entrada">
     <input ng-model= "data.qtdParcelas" type="number" placeholder="Em quantas parcela deseja parcelar?">
        
     <button ng-click="voltarPage()">VOLTAR</button>
     <button ng-click="irProximaPage()">SIMULAR</button>
     </form>
     </section>
-    <!-- <div class="form-group">
-        <label>Uniforme da Equipe</label>
-        <select class="form-control" name="uniforme" id="uniforme"
-        ng-model="uniforme" ng-options="x.nomeuniforme for x in listaUniformes">
-        <option value="">Selecione o uniforme</option>
- </select>
-     </div> -->
    
-
-     <input type="text" ng-model="value" mask-currency="'R$'" config="{group:'.',decimal:',',indentation:' '}" />
-
-
     </main>
 </body>
 </html>

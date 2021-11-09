@@ -20,8 +20,8 @@ sincronizando.controller('ctrlStatusAprovado', function($scope, $location){
   console.log($scope.sub)
 
 
-  $scope.calculandoParcelaInicial = ($scope.sub * ((100 + (10) * (ResultTotalValue.dados3/12)))/100)/ResultTotalValue.dados3
-  console.log($scope.calculandoParcelaInicial)
+  $scope.calculandoParcelaInicial =parseFloat($scope.sub * ((100 + (10) * parseFloat(ResultTotalValue.dados3/12)))/100)/  ResultTotalValue.dados3
+  console.log (parseFloat($scope.calculandoParcelaInicial))
     
     $scope.irParaHome = function(){
 

@@ -22,20 +22,27 @@
     <form>
     <div class="form-group">
         
-    <select class="form-control" name="imovel" id="imovel" ng-options=" listagemTipos for listagemTipos in selecImovelCerto"  ng-model="data.imovel">
-        <option value="">Tipo do Imóvel</option>
-    </select>
-    </div>   
-    <input mask-currency="'R$'" config="{group:'.',decimal:',',indentation:' '}" ng-model="data.renda"  placeholder="Renda Mensal">
-    <input mask-currency="'R$'" config="{group:'.',decimal:',',indentation:' '}" ng-model="data.valor"  placeholder="Valor do Imóvel">
-    <input mask-currency="'R$'" config="{group:'.',decimal:',',indentation:' '}" ng-model="data.valorEntrada"  placeholder="Valor da entrada">
-    <input ng-model= "data.qtdParcelas" type="number" placeholder="Em quantas parcela deseja parcelar?">
-       
-    <button ng-click="voltarPage()">VOLTAR</button>
-    <button ng-click="irProximaPage()">SIMULAR</button>
-    </form>
-    </section>
-   
+        <section>
+            <form>
+            <div class="form-group">
+                
+            <select class="form-control" name="imovel" id="imovel" ng-options=" listagemTipos for listagemTipos in selecImovelCerto"  ng-model="data.imovel">
+                <option value="">Tipo do Imóvel</option>
+            </select>
+            </div>   
+            <input id="money2" ng-model="data.renda"   placeholder="Renda Mensal">
+            <input id="money1"  ng-model="data.valor"  placeholder="Valor do Imóvel">
+            <input id="money3" ng-model="data.valorEntrada"  placeholder="Valor da entrada">
+            <input ng-model= "data.qtdParcelas"  placeholder="Em quantas parcela deseja parcelar?">
+          
+               
+            <button ng-click="voltarPage()">VOLTAR</button>
+            <button ng-click="irProximaPage()">SIMULAR</button>
+        
+            </form>
+            </section>
+            <div>{{tes | currency : 'R$'}}</div>
+    
     </main>
 </body>
 </html>

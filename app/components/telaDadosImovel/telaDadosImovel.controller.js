@@ -1,5 +1,6 @@
 sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $http) {
     $scope.tituloHeadPageImovel = "Dados do Imóvel"
+  
 
 
     console.log('imovel')
@@ -18,7 +19,7 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
 
             formularioTipo: $scope.data.imovel,
             formularioRenda: $scope.data.renda,
-            formularioValor: $scope.data.valor,
+            formularioValor: $scope.data.valor ,
             formularioValorEntrada: $scope.data.valorEntrada,
             formularioQtdParcela: $scope.data.qtdParcelas
         }
@@ -26,12 +27,12 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
         $location.search(identificaDadosCadastrados)
         console.log(identificaDadosCadastrados)
 
-        console.log('chegou')
+        
+       
 
-
-        var b = ($scope.data.valor - $scope.data.valorEntrada + ((($scope.data.qtdParcelas / 12) * 10 / 100) * ($scope.data.valor - $scope.data.valorEntrada))) / $scope.data.qtdParcelas
-        console.log('valor de b', b)
-        if (b <= ($scope.data.renda * 0, 3)) {
+        $scope.tes = (parseFloat($scope.data.valor) - parseFloat($scope.data.valorEntrada) + ((($scope.data.qtdParcelas/12) * 10)/100) * parseFloat($scope.data.valor) - parseFloat($scope.data.valorEntrada)/ parseFloat($scope.data.qtdParcelas))
+        console.log('valor de b', $scope.tes)
+        if ( $scope.tes <= (($scope.data.renda) * 0,3)) {
             $location.path('/statusAprovado')
         } else {
             $location.path('/statusReprovado')
@@ -72,6 +73,10 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
             $scope.selecImovelCerto = data;
         }
     });
+   
     
-
 })
+
+$('#money2').mask('000.000.000.000.000,00', {reverse: true});
+$('#money1').mask('000.000.000.000.000,00', {reverse: true});
+$('#money3').mask('000.000.000.000.000,00', {reverse: true});

@@ -32,11 +32,14 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
 
         // $scope.tes = (parseFloat($scope.data.valor) - parseFloat($scope.data.valorEntrada) + ((($scope.data.qtdParcelas/12) * 10)/100) * parseFloat($scope.data.valor) - parseFloat($scope.data.valorEntrada)/ parseFloat($scope.data.qtdParcelas))
         var b = ($scope.data.valor - $scope.data.valorEntrada + ((($scope.data.qtdParcelas/12) * 10/100) *($scope.data.valor - $scope.data.valorEntrada))) / $scope.data.qtdParcelas
-        console.log('valor de b', $scope.tes)
-        if ( b <= ($scope.data.renda) * 0, 3) {
+        var valor=  ($scope.data.renda * 0,3)
+        console.log('resultado de valor: ',valor)
+        console.log('valor de b', b)
+        if ( b <= valor) {
             $location.path('/statusAprovado')
         } else {
             $location.path('/statusReprovado')
+        
         }
 
 

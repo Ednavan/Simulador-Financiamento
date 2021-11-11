@@ -97,6 +97,11 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
         $scope.bancoDeListaDados = res.identificaDadosCadastrados
     })
 
+    
+    $scope.voltarPage = function () {
+        $location.path('/TelaDadosProponente')
+    }
+    
     $.ajax({
 
         url: "http://localhost:3000/tiposImoveis",

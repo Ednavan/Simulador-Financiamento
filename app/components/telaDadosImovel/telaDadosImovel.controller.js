@@ -1,7 +1,16 @@
 sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $http) {
     $scope.tituloHeadPageImovel = "Dados do Imóvel"
-  
 
+    $scope.converterNumero = function(valor){
+        // criar variável para retornar
+        var result;
+        // retirar os pontos da string
+        result = valor.replace(/\./g, '');
+        // transformar a vírgula em um ponto
+        result = result.replace(/\,/g, '.');
+        // retorna o valor como number
+        return parseFloat(result);
+    }
 
     console.log('imovel')
     $scope.irProximaPage = function () {
@@ -18,31 +27,57 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
             listaCelular: verDados.dadosDoCelular,
 
             formularioTipo: $scope.data.imovel,
-            formularioRenda: $scope.data.renda,
-            formularioValor: $scope.data.valor ,
-            formularioValorEntrada: $scope.data.valorEntrada,
+            formularioRenda: $scope.converterNumero($scope.data.renda),
+            formularioValor: $scope.converterNumero($scope.data.valor),
+            formularioValorEntrada: $scope.converterNumero($scope.data.valorEntrada),
             formularioQtdParcela: $scope.data.qtdParcelas
         }
 
         $location.search(identificaDadosCadastrados)
         console.log(identificaDadosCadastrados)
+        console.log($scope.data.valor)
+        console.log($scope.data.valorEntrada)
+    
+        // $location.search(identificaDadosCadastrados)
 
-        
+        var rendaMensal = $scope.converterNumero($scope.data.renda);
+        var valorImovel = $scope.converterNumero($scope.data.valor);
+        var valorEntrada = $scope.converterNumero($scope.data.valorEntrada);
+
+
+        var expressaoFormula = (((valorImovel - valorEntrada + ((($scope.data.qtdParcelas / 12) * 10 / 100) 
+        * (valorImovel - valorEntrada))) / ($scope.data.qtdParcelas)))
        
 
-        // $scope.tes = (parseFloat($scope.data.valor) - parseFloat($scope.data.valorEntrada) + ((($scope.data.qtdParcelas/12) * 10)/100) * parseFloat($scope.data.valor) - parseFloat($scope.data.valorEntrada)/ parseFloat($scope.data.qtdParcelas))
-        var b = ($scope.data.valor - $scope.data.valorEntrada + ((($scope.data.qtdParcelas/12) * 10/100) *($scope.data.valor - $scope.data.valorEntrada))) / $scope.data.qtdParcelas
-        var valor=  ($scope.data.renda * 0,3)
-        console.log('resultado de valor: ',valor)
-        console.log('valor de b', b)
-        if ( b <= valor) {
+        if( expressaoFormula <= rendaMensal * 0.3) {
+            $location.search(identificaDadosCadastrados)
+            console.log('Ja está no if',expressaoFormula)
             $location.path('/statusAprovado')
-        } else {
+        }else{
+            console.log('Ja está no if',expressaoFormula)
             $location.path('/statusReprovado')
-        
         }
 
+        console.log('Apos',expressaoFormula)
+        // $scope.TelaAprovado = function () {
+        //     $location.path('/statusReprovado')
+        // }
+        // $scope.TelaReprovado = function () {
+        //     $location.path('/statusAprovado')
+        // }
+        // var chamadaTelaReprovado =  $location.path('/statusReprovado')
+        // var chamadaTelaAprovado = $location.path('/statusAprovado')
 
+        // if ((($scope.data.valor - $scope.data.valorEntrada + ((($scope.data.qtdParcelas / 12) * 10 / 100) 
+        // * ($scope.data.valor - $scope.data.valorEntrada))) / ($scope.data.qtdParcelas) <= 
+        // ($scope.data.renda * 0.3))) {
+
+        //     $scope.TelaAprovado();
+        //     console.log('APROVADO')
+        // } else {
+        //     console.log('reprovado ')
+        //     $scope.TelaReprovado();
+        // }
         $http({
             url: 'http://localhost:3000/bancoDeListaDados',
             method: 'POST',
@@ -53,19 +88,14 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
         }).catch(function () {
             console.log('não foi possivel estabelecer conexão')
         });
+
     }
     $http.get('http://localhost:3000/bancoDeListaDados/').
-        then(function (res) {
-            (console.log(res))
+    then(function (res) {
+        (console.log(res))
 
-            $scope.bancoDeListaDados = res.identificaDadosCadastrados
-        })
-
-    $scope.voltarPage = function () {
-        $location.path('/TelaDadosProponente')
-    }
-
-
+        $scope.bancoDeListaDados = res.identificaDadosCadastrados
+    })
 
     $.ajax({
 
@@ -78,9 +108,5 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
         }
     });
    
-    
 })
-
-$('#money2').mask('000.000.000.000.000,00', {reverse: true});
-$('#money1').mask('000.000.000.000.000,00', {reverse: true});
-$('#money3').mask('000.000.000.000.000,00', {reverse: true});
+$('.dinheiro').mask('#.##0,00', { reverse: true });

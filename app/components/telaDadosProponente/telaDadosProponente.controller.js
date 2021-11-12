@@ -39,45 +39,55 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
     $scope.irParaHome = function(){
         $location.path('/telaInicio')
     }
-    // var carrega = $location.search()
     
-  
-    // var verAno = {
-    //     mostragem: $scope.data.infoDataNascimento
-    // }
-    // console.log('vendo ano definido no input', verAno)
+    $scope.menorIdade = function(){
+    
+    var verAno = {
+        mostragem: $scope.data.infomracoesNascimento
+    }
+    console.log('vendo ano definido no input', verAno)
    
-    // function dataHoje(){
-    //     var data = new Date();
-    //     var ano = data.getFullYear();
-    //     return ano
-    // }
-    // console.log('Ano atual', dataHoje())
+    function dataHoje(){
+        var data = new Date();
+        var ano = data.getFullYear();
+        return ano
+    }
+    console.log('Ano atual', dataHoje())
 
-    // function data_nascimento(){
-    //     var ano2 = verAno.mostragem;
-    //     return ano2
-    // }
+    function data_nascimento(){
+        var ano2 = verAno.mostragem;
+        return ano2
+    }
     
-    // console.log('Data de nascimento informada :  ',data_nascimento())
+    console.log('Data de nascimento informada :  ',data_nascimento())
   
-    // var dataInput = data_nascimento();
-    // data = new Date(dataInput);
-    // dataFromatada = data.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
-    // console.log({dataFromatada} )
+    var dataInput = data_nascimento();
+    data = new Date(dataInput);
+    dataFromatada = data.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
+    console.log({dataFromatada} )
   
-    // var ano_atual = new Date().getFullYear();
-    // console.log("Ano", ano_atual)
-    // var data_aniversario = dataFromatada
-    // console.log('DEFINIDA NO INPUT :  ',data_aniversario)
-    // var ano_informado = data_aniversario.split('/')[2];
-    // console.log(ano_informado)
+    var ano_atual = new Date().getFullYear();
+    console.log("Ano", ano_atual)
+    var data_aniversario = dataFromatada
+    console.log('DEFINIDA NO INPUT :  ',data_aniversario)
+    var ano_informado = data_aniversario.split('/')[2];
+    console.log(ano_informado)
    
-    // var idade = (ano_atual - ano_informado);
-    // console.log(idade); 
+    idade = (ano_atual - ano_informado);
+    console.log(idade); 
 
-    
-    
+    if(idade < 18 ){
+        console.log('menor de idade'.customerForm.$invalid);
+        return
+    }else{
+   
+
+        console.log('maior de idade'.$valid);
+        
+    }
+
+}  
+
     
 })
 

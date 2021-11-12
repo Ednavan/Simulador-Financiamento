@@ -45,7 +45,7 @@
                 <div class="label-float">
 
                     <!-- <input  type="date"  ng-model="data.infoDataNascimento"  placeholder=" " required > -->
-                    <input type="date"  ng-model="data.infomracoesNascimento" placeholder=" "  required >
+                    <input type="date" name="infomracoesNascimento"   ng-model="data.infomracoesNascimento" placeholder=" "  required >
                    
                     <label>Data de nascimento</label>
                 </div>
@@ -54,13 +54,13 @@
                     <label>CEP</label>
                 </div>
                 <div class="label-float">
-                    <input id="inputCelular" type="text"  maxlength="12" ng-pattern="re" ng-model="data.infoCelular"  placeholder=" " required>
+                    <input id="inputCelular" type="text"  ng-pattern="re" ng-model="data.infoCelular"  placeholder=" " required>
                     <label>Celular</label>
                 </div>
                 
               
                 <button ng-click="irParaHome()">CANCELAR</button>
-                <button ng-click="irProximaPage('infoNomeCompleto', 'infoProfissao', 'infoCPF', 'infoEmail','infoDataNascimento','infoCEP','infoCelular')" ng-disabled="customerForm.$invalid" >CONTINUAR</button>
+                <button ng-click="irProximaPage('infoNomeCompleto', 'infoProfissao', 'infoCPF', 'infoEmail','infoDataNascimento','infoCEP','infoCelular')" ng-disabled="customerForm.$invalid || menorIdade()" >CONTINUAR</button>
             </form>
         </section>
 
@@ -70,4 +70,4 @@
     </main>
 
 </body>
-</html>
+</html> 

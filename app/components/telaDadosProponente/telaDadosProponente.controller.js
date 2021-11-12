@@ -1,7 +1,6 @@
 sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
     $scope.tituloHeadPage = "Dados Proponente"
-  
-   
+    
     
     $scope.irProximaPage = function(nome, profi, cpf, email, nascimento, cep, celular){
        
@@ -18,6 +17,8 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
         console.log(recebendoDados)
         $location.path('/TelaDadosImovel')
     }
+      
+  
 
     $scope.data = {};
     /**@param editar foi definida uma variavel responsavel por receber os dados como objeto, para que seja capazes de mostrar e consequentemente realizar alterações*/
@@ -39,6 +40,7 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
     $scope.irParaHome = function(){
         $location.path('/telaInicio')
     }
+   
     
     $scope.menorIdade = function(){
     
@@ -75,7 +77,7 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
    
     idade = (ano_atual - ano_informado);
     console.log(idade); 
-
+   
     if(idade < 18 ){
         console.log('menor de idade'.customerForm.$invalid);
         return

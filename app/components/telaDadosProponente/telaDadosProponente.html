@@ -25,42 +25,52 @@
             <form name="customerForm" >
                  
                 <input type="text" id="nomeCompleto" name="nomeCompleto" ng-pattern="/^[a-zA-ZáéíóúÁÉÍÓÚ\s]*$/" ng-minlength="3" ng-model="data.infoNomeCompleto" placeholder=" "  ng-required="true"  >
-                   
+                <div ng-show="customerForm.nomeCompleto.$touched && customerForm.nomeCompleto.$invalid">Preencha com seu nome completo</div>  
                 <label>Nome completo</label>
                       
               
                 
                 <div class="label-float">
-                    <input type="text" ng-model="data.infoProfissao" placeholder=" " ng-required="true" >
+                    <input type="text" id="definindoProfissao" name="definindoProfissao" ng-model="data.infoProfissao" placeholder=" " ng-required="true">
+                    <div ng-show="customerForm.definindoProfissao.$touched && customerForm.definindoProfissao.$invalid">Preencha com a sua profissão</div>  
+
                     <label>Profissão</label>
                 </div>
                 <div class="label-float">
-                    <input id="inputCpf" type="text" ng-model="data.infoCPF" placeholder=" " ng-required="true" >
+                    <input id="inputCpf" id="definindoCpf" name="definindoCpf" type="text" ng-model="data.infoCPF" placeholder=" " ng-required="true" >
+                    <div ng-show="customerForm.definindoCpf.$touched && customerForm.definindoCpf.$invalid">Preencha com o seu CPF</div>  
+
                     <label>CPF</label>
                 </div>
                 <div class="label-float">
-                    <input type="text" ng-model="data.infoEmail" placeholder=" " ng-required="true" >
+                    <input type="text"  id="definindoEmail" name="definindoEmail" ng-model="data.infoEmail" placeholder=" " ng-required="true" >
+                    <div ng-show="customerForm.nomeCompleto.$touched && customerForm.nomeCompleto.$invalid">Preencha com um email válido</div>  
+
                     <label>E-mail</label>
                 </div>
                 <div class="label-float">
 
                     <!-- <input  type="date"  ng-model="data.infoDataNascimento"  placeholder=" " required > -->
-                    <input type="date" name="infomracoesNascimento"   ng-model="data.infomracoesNascimento" placeholder=" "  ng-required="true"  >
-                   
+                    <input type="date"  id="definindoDataNascimento" name="definindoDataNascimento" ng-model="data.infomracoesNascimento" placeholder=" "  ng-required="true"  >
+                    <div ng-show="customerForm.definindoDataNascimento.$touched && customerForm.definindoDataNascimento.$invalid">Preencha com sua data de nascimento</div>  
+
                     <label>Data de nascimento</label>
                 </div>
                 <div class="label-float">
-                    <input id="InputCep"  ng-model="data.infoCEP" placeholder=" " ng-required="true" >
+                    <input id="InputCep" id="definindoCep" name="definindoCep"  ng-model="data.infoCEP" placeholder=" " ng-required="true" >
+                    <div ng-show="customerForm.definindoCep.$touched && customerForm.definindoCep.$invalid">Preencha com o Cep</div>  
+
                     <label>CEP</label>
                 </div>
                 <div class="label-float">
-                    <input id="inputCelular" type="text"  ng-pattern="re" ng-model="data.infoCelular"  placeholder=" " ng-required="true" >
+                    <input id="inputCelular" id="definindoCelular" name="definindoCelular"  type="text"  ng-pattern="re" ng-model="data.infoCelular"  placeholder=" " ng-required="true" >
+                    <div ng-show="customerForm.definindoCelular.$touched && customerForm.definindoCelular.$invalid">Preencha com seu celular</div>  
                     <label>Celular</label>
                 </div>
                 
               
                 <button ng-click="irParaHome()">CANCELAR</button>
-                <button ng-click="irProximaPage('infoNomeCompleto', 'infoProfissao', 'infoCPF', 'infoEmail','infoDataNascimento','infoCEP','infoCelular')" ng-disabled="customerForm.$invalid || menorIdade()"  >CONTINUAR</button>
+                <button ng-click="irProximaPage('infoNomeCompleto', 'infoProfissao', 'infoCPF', 'infoEmail','infoDataNascimento','infoCEP','infoCelular')" ng-disabled="customerForm.$invalid || menorIdade()">CONTINUAR</button>
             </form>
      
 

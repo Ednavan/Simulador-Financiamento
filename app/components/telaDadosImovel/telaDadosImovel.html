@@ -26,18 +26,18 @@
             <form>
             <div class="form-group">
                 
-            <select class="form-control" name="imovel" id="imovel" ng-options=" listagemTipos for listagemTipos in selecImovelCerto"  ng-model="data.imovel">
+            <select class="form-control" name="imovel" id="imovel" ng-options=" listagemTipos for listagemTipos in selecImovelCerto"  ng-model="data.imovel" ng-required="true">
                 <option value="">Tipo do Imóvel</option>
             </select>
             </div>   
-            <input  id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block" ng-model="data.renda"  placeholder="Renda Mensal">
-            <input  id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block"  ng-model="data.valor"  placeholder="Valor do Imóvel">
-            <input  id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block"ng-model="data.valorEntrada"  placeholder="Valor da entrada">
-            <input ng-model= "data.qtdParcelas"  placeholder="Em quantas parcela deseja parcelar?">
+            <input  id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block" ng-model="data.renda"  placeholder="Renda Mensal" ng-required="true">
+            <input  id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block"  ng-model="data.valor"  placeholder="Valor do Imóvel" ng-required="true">
+            <input  id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block"ng-model="data.valorEntrada"  placeholder="Valor da entrada" ng-required="true" >
+            <input ng-model= "data.qtdParcelas" maxlength="360"  placeholder="Em quantas parcela deseja parcelar?" ng-required="true">
          <br>
    <!-- <input type="text" id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block" /> -->
             <button ng-click="voltarPage()">VOLTAR</button>
-            <button  ng-click="irProximaPage() " >SIMULAR</button>
+            <button  ng-click="irProximaPage() ">SIMULAR</button>
             </form>
             </section>
             <div>{{tes | currency : 'R$'}}</div>

@@ -19,29 +19,29 @@
 
     <main>
     <section>
-    <form>
-    <div class="form-group">
-        
-        <section>
-            <form>
-            <div class="form-group">
-                
-            <select class="form-control" name="imovel" id="imovel" ng-options=" listagemTipos for listagemTipos in selecImovelCerto"  ng-model="data.imovel" ng-required="true">
+    <form name="form">            
+            <!-- <select class="form-control" name="imovel" id="imovel" ng-options=" listagemTipos for listagemTipos in selecImovelCerto"  ng-model="data.imovel" ng-required="true" >
                 <option value="">Tipo do Imóvel</option>
-            </select>
+            </select> -->
             </div>   
-            <input  id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block" ng-model="data.renda"  placeholder="Renda Mensal" ng-required="true">
-            <input  id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block"  ng-model="data.valor"  placeholder="Valor do Imóvel" ng-required="true">
-            <input  id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block"ng-model="data.valorEntrada"  placeholder="Valor da entrada" ng-required="true" >
-            <input ng-model= "data.qtdParcelas" maxlength="360"  placeholder="Em quantas parcela deseja parcelar?" ng-required="true">
-         <br>
-   <!-- <input type="text" id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block" /> -->
+            <input  id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block" ng-model="data.renda"  placeholder="Renda Mensal" ng-required="true" >
+            <input  id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block"  ng-model="data.valor"  placeholder="Valor do Imóvel" ng-required="true" >
+            <input  id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block"ng-model="data.valorEntrada"  placeholder="Valor da entrada"  ng-required="true" >
+            <input  ng-model= "data.qtdParcelas" min="1" max="360" type="number" placeholder="Em quantas parcela deseja parcelar?" ng-required="true"  >
+            <br>
             <button ng-click="voltarPage()">VOLTAR</button>
-            <button  ng-click="irProximaPage() ">SIMULAR</button>
-            </form>
-            </section>
-            <div>{{tes | currency : 'R$'}}</div>
+            <button  ng-click="irProximaPage()" ng-disabled="form.$invalid">SIMULAR</button>
+        </form>
+    </section>
+           <br>
+        
     
     </main>
+
+    <!-- <form name="ok">
+        <label> teste</label>
+        <input type="text"  required>
+         <button ng-disabled="ok.$invalid">clique</button>
+    </form> -->
 </body>
 </html>

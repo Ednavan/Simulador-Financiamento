@@ -20,13 +20,13 @@
     </nav>
 
     <main>
-    
+        <section>
       
             <form name="customerForm" >
                  
                 <input type="text" id="nomeCompleto" name="nomeCompleto" ng-pattern="/^[a-zA-ZáéíóúÁÉÍÓÚ\s]*$/" ng-minlength="3" ng-model="data.infoNomeCompleto" placeholder=" "  ng-required="true"  >
                 <div ng-hide="customerForm.nomeCompleto.$touched">Preencha com seu nome completo</div>
-                <div ng-show="customerForm.nomeCompleto.$touched && customerForm.nomeCompleto.$invalid">Nome inválido</div>  
+                <div id="nomeInvalidoErro" ng-show="customerForm.nomeCompleto.$touched && customerForm.nomeCompleto.$invalid">Nome inválido</div>  
                 <label>Nome completo</label>
                       
               
@@ -48,7 +48,7 @@
                 <div class="label-float">
                     <input type="text"  id="definindoEmail" name="definindoEmail" ng-model="data.infoEmail" placeholder=" " ng-required="true" >
                     <div ng-hide="customerForm.definindoEmail.$touched">Preencha com um email válido</div>
-                    <div ng-show="customerForm.definindoEmail.$touched && customerForm.definindoEmail.$invalid">Email inválido</div>  
+                    <div  ng-show="customerForm.definindoEmail.$touched && customerForm.definindoEmail.$invalid">Email inválido</div>  
 
                     <label>E-mail</label>
                 </div>
@@ -69,8 +69,8 @@
                     <label>CEP</label>
                 </div>
                 <div class="label-float">
-                    <input id="inputCelular" id="definindoCelular" name="definindoCelular"  type="text"  ng-pattern="re" ng-model="data.infoCelular"  placeholder=" " ng-required="true">
-                    <div ng-hide="customerForm.definindoCelular.$touched">Preencha com seu celular</div>
+                    <input id="inputCelular" id="definindoCelular" name="definindoCelular"  type="text"   ng-model="data.infoCelular"  placeholder=" " required>
+                    <div ng-hide="definindoCelular.$touched">Preencha com seu celular</div>
                     <div ng-show="customerForm.definindoCelular.$touched && customerForm.definindoCelular.$invalid">Numero inválido do celular</div>  
                     <label>Celular</label>
                 </div>
@@ -81,7 +81,7 @@
             </form>
      
 
-
+        </section>
 
        
     </main>

@@ -95,7 +95,8 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
 
 $('#inputCpf').mask('000.000.000-00', {reverse: true});
 
-$('#inputCelular').mask(' (00) 0000-0000', {reverse:true})
+
+$('#inputCelular').mask('(00) 0 0000-0000');
 
 $('#InputCep').mask('00000-000', {reverse: true});
 

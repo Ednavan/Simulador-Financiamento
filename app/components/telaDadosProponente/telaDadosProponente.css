@@ -2,6 +2,45 @@ input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
     border: 2px solid red;
 }
 
+
+
 #nomeInvalidoErro{
     color: red;
+}
+
+/* section */
+#formularioProponente{
+   
+    margin: 10px;
+}
+
+
+#nomeCompleto{
+width: 100%;
+
+
+}
+
+#definindoProfissao{
+    width: 100%;
+    
+}
+
+#inputCpf{
+    width: 100%;
+}
+
+#InputCep{
+    width: 100%;
+}
+#definindoDataNascimento{
+    width: 100%; 
+}
+
+#definindoEmail{
+    width: 100%;
+}
+
+#inputCelular{
+    width: 100%;
 }

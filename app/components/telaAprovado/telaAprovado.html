@@ -8,8 +8,9 @@
 </head>
 <body>
     <header id="menuTitulo">
-        <div id="titulo">
-           <h1>Simulador de Financiamentos</h1>
+        <img src="../../../app/img/SoVamuIcone.png">
+        <div class="h1TituloPrincipal">
+            <h1>Simulador de Financiamentos</h1>
         </div>
     </header>
 
@@ -24,7 +25,7 @@
         <p>Taxa de 8% ao ano para correntistas</p>
         <P>Taxa de 10% ao ano para não correntistas</P>
         <p>Parcela Inicial {{calculandoParcelaInicial | currency}}</p>
-        <p>Valor total aprovado: R$X.XXX,XX {{calculandoParcelaInicial}} </p>
+        <p>Valor total aprovado: {{sub | currency}} </p>
         <p>Seguro Só Vamu Security.</p>
         <p>Desconto na primeira e na última parcela</p>
 

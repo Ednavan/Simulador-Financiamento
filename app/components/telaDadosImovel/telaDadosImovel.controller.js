@@ -35,14 +35,29 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
 
         $location.search(identificaDadosCadastrados)
         console.log(identificaDadosCadastrados)
-        console.log($scope.data.valor)
-        console.log($scope.data.valorEntrada)
+        // console.log($scope.data.valor)
+        // console.log($scope.data.valorEntrada)
     
+        
         // $location.search(identificaDadosCadastrados)
 
         var rendaMensal = $scope.converterNumero($scope.data.renda);
         var valorImovel = $scope.converterNumero($scope.data.valor);
         var valorEntrada = $scope.converterNumero($scope.data.valorEntrada);
+    
+        
+        var realizaCalculoImovel = (0.2 * valorImovel);
+        console.log('Aqui analise feita:   ', realizaCalculoImovel)
+        // var analisaValorEntrada = {};
+
+        // $scope.verificaSeEntradaMenorQueVintePorcento = function(){
+        //     analisaValorEntrada = valorEntrada < (0.2 * valorImovel);
+            
+        // }
+       
+        // console.log('AQUIIII',$scope.verificaSeEntradaMenorQueVintePorcento().analisaValorEntrada)
+
+    
 
 
         var expressaoFormula = (((valorImovel - valorEntrada + ((($scope.data.qtdParcelas / 12) * 10 / 100) 
@@ -58,26 +73,8 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
             $location.path('/statusReprovado')
         }
 
-        console.log('Apos',expressaoFormula)
-        // $scope.TelaAprovado = function () {
-        //     $location.path('/statusReprovado')
-        // }
-        // $scope.TelaReprovado = function () {
-        //     $location.path('/statusAprovado')
-        // }
-        // var chamadaTelaReprovado =  $location.path('/statusReprovado')
-        // var chamadaTelaAprovado = $location.path('/statusAprovado')
-
-        // if ((($scope.data.valor - $scope.data.valorEntrada + ((($scope.data.qtdParcelas / 12) * 10 / 100) 
-        // * ($scope.data.valor - $scope.data.valorEntrada))) / ($scope.data.qtdParcelas) <= 
-        // ($scope.data.renda * 0.3))) {
-
-        //     $scope.TelaAprovado();
-        //     console.log('APROVADO')
-        // } else {
-        //     console.log('reprovado ')
-        //     $scope.TelaReprovado();
-        // }
+        console.log('Apos o if',expressaoFormula)
+       
         $http({
             url: 'http://localhost:3000/bancoDeListaDados',
             method: 'POST',
@@ -90,6 +87,23 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
         });
 
     }
+
+    
+
+    //     $scope.FormulaDosVintePorCento = function(){
+    //         if (!$scope.data) {
+    //             return false;
+    //         }
+    //         if (!$scope.data.valorEntrada || !$scope.data.valor){
+
+    //             return false;
+    //         }
+    //         var entrada = $scope.converterNumero($scope.data.valorEntrada);
+    //         var imovel = $scope.converterNumero($scope.data.valor);
+    //         console.log(entrada, imovel, entrada < (0.2 * imovel));
+    //     return entrada < (0.2 * imovel) 
+    // }
+
     $http.get('http://localhost:3000/bancoDeListaDados/').
     then(function (res) {
         (console.log(res))

@@ -10,81 +10,100 @@
 
 <body>
     <header id="menuTitulo">
-        <div id="titulo">
+        <img src="../../../app/img/SoVamuIcone.png">
+        <div class="h1TituloPrincipal">
             <h1>Simulador de Financiamentos</h1>
         </div>
     </header>
 
-    <nav>
+    <nav id="tipoDeCadastramento">
         <h2>Dados proponente</h2>
     </nav>
 
-    <main>
-        <section>
-      
-            <form name="customerForm" >
-                 
-                <input type="text" id="nomeCompleto" name="nomeCompleto" ng-pattern="/^[a-zA-ZáéíóúÁÉÍÓÚ\s]*$/" ng-minlength="3" ng-model="data.infoNomeCompleto" placeholder=" "  ng-required="true"  >
-                <div ng-hide="customerForm.nomeCompleto.$touched">Preencha com seu nome completo</div>
-                <div id="nomeInvalidoErro" ng-show="customerForm.nomeCompleto.$touched && customerForm.nomeCompleto.$invalid">Nome inválido</div>  
-                <label>Nome completo</label>
-                      
-              
-                
-                <div class="label-float">
-                    <input type="text" id="definindoProfissao" name="definindoProfissao" ng-model="data.infoProfissao" placeholder=" " ng-required="true">
-                    <div ng-hide="customerForm.definindoProfissao.$touched">Preencha com a sua profissão</div>
-                    <div ng-show="customerForm.definindoProfissao.$touched && customerForm.definindoProfissao.$invalid">Nome inválido da profissão</div>  
+    <main id="conteudo-principal">
+        <section id="formularioProponente">
 
-                    <label>Profissão</label>
-                </div>
-                <div class="label-float">
-                    <input id="inputCpf" id="definindoCpf" name="definindoCpf" type="text" ng-model="data.infoCPF" placeholder=" " ng-required="true" >
-                    <div ng-hide="customerForm.definindoCpf.$touched">Preencha com o seu CPF</div>
-                    <div ng-show="customerForm.definindoCpf.$touched && customerForm.definindoCpf.$invalid">CPF inválido</div>  
+            <form name="customerForm">
+                <div id=bloco1 class="row">
+                    <div class="col-4">
+                        <input type="text" id="nomeCompleto" name="nomeCompleto" ng-pattern="/^[a-zA-ZáéíóúÁÉÍÓÚ\s]*$/"
+                            ng-minlength="3" ng-model="data.infoNomeCompleto" placeholder=" " ng-required="true">
+                        <div ng-hide="customerForm.nomeCompleto.$touched">Preencha com seu nome completo</div>
+                        <div id="nomeInvalidoErro"
+                            ng-show="customerForm.nomeCompleto.$touched && customerForm.nomeCompleto.$invalid">Nome
+                            inválido</div>
+                        <label>Nome completo</label>
+                    </div>
 
-                    <label>CPF</label>
-                </div>
-                <div class="label-float">
-                    <input type="text"  id="definindoEmail" name="definindoEmail" ng-model="data.infoEmail" placeholder=" " ng-required="true" >
-                    <div ng-hide="customerForm.definindoEmail.$touched">Preencha com um email válido</div>
-                    <div  ng-show="customerForm.definindoEmail.$touched && customerForm.definindoEmail.$invalid">Email inválido</div>  
 
-                    <label>E-mail</label>
-                </div>
-                <div class="label-float">
+                    <div class="col-4">
+                        <input type="text" id="definindoProfissao" name="definindoProfissao"
+                            ng-model="data.infoProfissao" placeholder=" " ng-required="true">
+                        <div ng-hide="customerForm.definindoProfissao.$touched">Preencha com a sua profissão</div>
+                        <div
+                            ng-show="customerForm.definindoProfissao.$touched && customerForm.definindoProfissao.$invalid">
+                            Nome inválido da profissão</div>
 
-                    <!-- <input  type="date"  ng-model="data.infoDataNascimento"  placeholder=" " required > -->
-                    <input type="date"  id="definindoDataNascimento" name="definindoDataNascimento" ng-model="data.infomracoesNascimento" placeholder=" "  ng-required="true">
-                    <div ng-hide="customerForm.definindoDataNascimento.$touched">Preencha com sua data de nascimento</div>
-                    <div ng-show="customerForm.definindoDataNascimento.$touched && customerForm.definindoDataNascimento.$invalid">Preencha com uma data válida</div>  
+                        <label>Profissão</label>
+                    </div>
+                    <div class="col-4">
+                        <input id="inputCpf" name="definindoCpf" type="text" ng-model="data.infoCPF" placeholder=" "
+                            ng-required="true">
+                        <div ng-hide="customerForm.definindoCpf.$touched">Preencha com o seu CPF</div>
+                        <div ng-show="customerForm.definindoCpf.$touched && customerForm.definindoCpf.$invalid">CPF
+                            inválido</div>
+                        <label>CPF</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label-float col-4">
+                        <input type="text" id="definindoEmail" name="definindoEmail" ng-model="data.infoEmail"
+                            placeholder=" " ng-required="true">
+                        <div ng-hide="customerForm.definindoEmail.$touched">Preencha com um email válido</div>
+                        <div ng-show="customerForm.definindoEmail.$touched && customerForm.definindoEmail.$invalid">
+                            Email inválido</div>
+                        <label>E-mail</label>
+                    </div>
+                    <div class="col-4">
 
-                    <label>Data de nascimento</label>
-                </div>
-                <div class="label-float">
-                    <input id="InputCep" id="definindoCep" name="definindoCep"  ng-model="data.infoCEP" placeholder=" " ng-required="true" >
-                    <div ng-hide="customerForm.definindoCep.$touched">Preencha com o seu CEP</div>
-                    <div ng-show="customerForm.definindoCep.$touched && customerForm.definindoCep.$invalid">O CEP deve ter 9 dígitos</div>  
+                        <!-- <input  type="date"  ng-model="data.infoDataNascimento"  placeholder=" " required > -->
+                        <input type="date" id="definindoDataNascimento" name="definindoDataNascimento"
+                            ng-model="data.infomracoesNascimento" placeholder=" " ng-required="true">
+                        <div ng-hide="customerForm.definindoDataNascimento.$touched">Preencha com sua data de nascimento
+                        </div>
+                        <div
+                            ng-show="customerForm.definindoDataNascimento.$touched && customerForm.definindoDataNascimento.$invalid">
+                            Preencha com uma data válida</div>
 
-                    <label>CEP</label>
+                        <label>Data de nascimento</label>
+                    </div>
+                    <div class="col-4">
+                        <input id="InputCep" name="definindoCep" ng-model="data.infoCEP" placeholder=" "
+                            ng-required="true">
+                        <div ng-hide="customerForm.definindoCep.$touched">Preencha com o seu CEP</div>
+                        <div ng-show="customerForm.definindoCep.$touched && customerForm.definindoCep.$invalid">O CEP
+                            deve ter 9 dígitos</div>
+
+                        <label>CEP</label>
+                    </div>
                 </div>
-                <div class="label-float">
-                    <input id="inputCelular" id="definindoCelular" name="definindoCelular"  type="text"   ng-model="data.infoCelular"  placeholder=" " required>
-                    <div ng-hide="definindoCelular.$touched">Preencha com seu celular</div>
-                    <div ng-show="customerForm.definindoCelular.$touched && customerForm.definindoCelular.$invalid">Numero inválido do celular</div>  
-                    <label>Celular</label>
+
+                <div class="row">
+                    <div class="col-4">
+                        <input id="inputCelular" name="inputCelular" type="text" ng-model="data.infoCelular"
+                            placeholder=" " required>
+                        <div ng-hide="definindoCelular.$touched">Preencha com seu celular</div>
+                        <div ng-show="customerForm.definindoCelular.$touched && customerForm.definindoCelular.$invalid">
+                            Numero inválido do celular</div>
+                        <label>Celular</label>
+                    </div>
                 </div>
-                
-              
-                <button ng-click="irParaHome()">CANCELAR</button>
-                <button ng-click="irProximaPage('infoNomeCompleto', 'infoProfissao', 'infoCPF', 'infoEmail','infoDataNascimento','infoCEP','infoCelular')" ng-disabled="customerForm.$invalid || menorIdade()">CONTINUAR</button>
+                <button ng-click="buttonCancelar()">CANCELAR</button>
+                <button
+                    ng-click="irProximaPage('infoNomeCompleto', 'infoProfissao', 'infoCPF', 'infoEmail','infoDataNascimento','infoCEP','infoCelular')"
+                    ng-disabled="customerForm.$invalid || menorIdade()">CONTINUAR</button>
             </form>
-     
-
         </section>
-
-       
     </main>
-
 </body>
-</html> 
+</html>

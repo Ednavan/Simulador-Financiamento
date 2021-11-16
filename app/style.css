@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    
+}
+
+#tipoDeCadastramento{
+    margin: 10px;
+}
+
+#menuTitulo{
+    background-color: #6200EE;
+    color: #FFFF;
+    display: flex;
+    padding-left: 2%;
+    flex-flow: row wrap;
+    padding: 10px;
+}
+
+.h1TituloPrincipal{
+    padding-left: 4%;
+    font-family: ro;
+
+}
+

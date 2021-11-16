@@ -37,64 +37,67 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
         $scope.data.infoCelular = editar.dadosDoCelular
     }
 
-    $scope.irParaHome = function(){
+    $scope.buttonCancelar = function(){
+        var cancelar = $location.search('')
+        console.log('teste', cancelar)
+
         $location.path('/telaInicio')
-    }
-   
-    
-    $scope.menorIdade = function(){
-    
-    var verAno = {
-        mostragem: $scope.data.infomracoesNascimento
-    }
-    console.log('vendo ano definido no input', verAno)
-   
-    function dataHoje(){
-        var data = new Date();
-        var ano = data.getFullYear();
-        return ano
-    }
-    console.log('Ano atual', dataHoje())
-
-    function data_nascimento(){
-        var ano2 = verAno.mostragem;
-        return ano2
-    }
-    
-    console.log('Data de nascimento informada :  ',data_nascimento())
-  
-    var dataInput = data_nascimento();
-    data = new Date(dataInput);
-    dataFromatada = data.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
-    console.log({dataFromatada} )
-  
-    var ano_atual = new Date().getFullYear();
-    console.log("Ano", ano_atual)
-    var data_aniversario = dataFromatada
-    console.log('DEFINIDA NO INPUT :  ',data_aniversario)
-    var ano_informado = data_aniversario.split('/')[2];
-    console.log(ano_informado)
-   
-    idade = (ano_atual - ano_informado);
-    console.log(idade); 
-   
-    if(idade < 18 ){
-        console.log('menor de idade'.customerForm.$invalid);
-        return
-    }else{
-   
-
-        console.log('maior de idade'.$valid);
         
     }
 
-}  
+    
+    // $scope.menorIdade = function(){
+    
+    // var verAno = {
+    //     mostragem: $scope.data.infomracoesNascimento
+    // }
+    // console.log('vendo ano definido no input', verAno)
+   
+    // function dataHoje(){
+    //     var data = new Date();
+    //     var ano = data.getFullYear();
+    //     return ano
+    // }
+    // console.log('Ano atual', dataHoje())
+
+    // function data_nascimento(){
+    //     var ano2 = verAno.mostragem;
+    //     return ano2
+    // }
+    
+    // console.log('Data de nascimento informada :  ',data_nascimento())
+  
+    // var dataInput = data_nascimento();
+    // data = new Date(dataInput);
+    // dataFromatada = data.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
+    // console.log({dataFromatada} )
+  
+    // var ano_atual = new Date().getFullYear();
+    // console.log("Ano", ano_atual)
+    // var data_aniversario = dataFromatada
+    // console.log('DEFINIDA NO INPUT :  ',data_aniversario)
+    // var ano_informado = data_aniversario.split('/')[2];
+    // console.log(ano_informado)
+   
+    // idade = (ano_atual - ano_informado);
+    // console.log(idade); 
+   
+    // if(idade < 18 ){
+    //     console.log('menor de idade'.customerForm.$invalid);
+    //     return
+    // }else{
+   
+
+    //     console.log('maior de idade'.$valid);
+        
+    // }
+
+// }  
 
     
 })
 
 $('#inputCpf').mask('000.000.000-00', {reverse: true});
-
 
 $('#inputCelular').mask('(00) 0 0000-0000');
 

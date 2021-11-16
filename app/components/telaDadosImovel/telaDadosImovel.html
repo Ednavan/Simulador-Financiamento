@@ -1,47 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{tituloHeadPageImovel}}</title>
 </head>
+
 <body>
     <header id="menuTitulo">
-        <div id="titulo">
-           <h1>Simulador de Financiamentos</h1>
+        <img src="../../../app/img/SoVamuIcone.png">
+        <div class="h1TituloPrincipal">
+            <h1>Simulador de Financiamentos</h1>
         </div>
     </header>
-
     <nav>
         <h2>Dados do imóvel</h2>
     </nav>
-
     <main>
-    <section>
-    <form name="form">            
-            <!-- <select class="form-control" name="imovel" id="imovel" ng-options=" listagemTipos for listagemTipos in selecImovelCerto"  ng-model="data.imovel" ng-required="true" >
+        <section>
+            <form name="form">
+                <select class="form-control" name="imovel" id="imovel" ng-options=" listagemTipos for listagemTipos in selecImovelCerto"  ng-model="data.imovel" ng-required="true" >
                 <option value="">Tipo do Imóvel</option>
-            </select> -->
-            </div>   
-            <input  id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block" ng-model="data.renda"  placeholder="Renda Mensal" ng-required="true" >
-            <input  id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block"  ng-model="data.valor"  placeholder="Valor do Imóvel" ng-required="true" >
-            <input  id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block"ng-model="data.valorEntrada"  placeholder="Valor da entrada"  ng-required="true" >
-            <input  ng-model= "data.qtdParcelas" min="1" max="360" type="number" placeholder="Em quantas parcela deseja parcelar?" ng-required="true"  >
-            <br>
-            <button ng-click="voltarPage()">VOLTAR</button>
-            <button  ng-click="irProximaPage()" ng-disabled="form.$invalid">SIMULAR</button>
-        </form>
-    </section>
-           <br>
-        
-    
+            </select>
+                </div>
+                <input id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block"
+                    ng-model="data.renda" placeholder="Renda Mensal" ng-required="true">
+                <input id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block"
+                    ng-model="data.valor" placeholder="Valor do Imóvel" ng-required="true">
+                <input id="dinheiro" name="entrada" class="dinheiro form-control" style="display:inline-block"
+                    ng-model="data.valorEntrada" placeholder="Valor da entrada" ng-required="true">
+                <div ng-show="FormulaDosVintePorCento()">Preencha com no mínimo 20% do valor do imóvel</div>
+                <input ng-model="data.qtdParcelas" min="1" max="360" type="number"
+                    placeholder="Em quantas parcela deseja parcelar?" ng-required="true">
+                <br>
+                <button ng-click="voltarPage()">VOLTAR</button>
+                <button ng-click="irProximaPage()" ng-disabled="form.$invalid">SIMULAR</button>
+            </form>
+        </section>
+        <br>
     </main>
-
-    <!-- <form name="ok">
-        <label> teste</label>
-        <input type="text"  required>
-         <button ng-disabled="ok.$invalid">clique</button>
-    </form> -->
 </body>
 </html>

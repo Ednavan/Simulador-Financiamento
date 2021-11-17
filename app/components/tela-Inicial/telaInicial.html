@@ -13,15 +13,22 @@
             <h1>Simulador de Financiamentos</h1>
         </div>
     </header>
-    <nav>
-        <h2>Tela Inicial</h2>
+    <nav id="tipoDeCadastramento" >
+        <h2  id="dadosSubtitulo">Tela Inicial</h2>
     </nav>
-    <main>
-        <section>
-            <h3>Conquiste o sonho da casa própria</h3>
-            <p>Em apenas alguns passos fique mais perto de segurar as chaves</p>
-            <button ng-click="irProximaPage()">SIMULAR FINANCIAMENTO</button>
+    <main id="conteudo-principal">
+        <section id="formularioInicio">
+            <div id="infoTituloSub">
+            <h3 id="tituloh3"><strong>Conquiste o sonho da casa própria</strong></h3>
+            <p id="subtituloParagrafo"><strong>Em apenas alguns passos fique mais perto de <br> segurar as chaves :)</strong> </p>
+            <button id="btnSimularFinancimento" ng-click="irProximaPage()" class="btn btn-primary">SIMULAR FINANCIAMENTO</button>
+            </div>
         </section>
     </main>
+    <footer id="footertelaInicial">
+        <div id="marcaDaguaSoVamu">
+            <img src="../../../app/img/marcad'aguaSovamu.png" alt="">
+        </div>
+    </footer>
 </body>
 </html>

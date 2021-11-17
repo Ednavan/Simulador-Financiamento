@@ -14,23 +14,31 @@
         </div>
     </header>
 
-    <nav>
-        <h2>Aprovado</h2>
+    <nav id="tipoDeCadastramento">
+        <h2 id="dadosSubtitulo">Aprovado</h2>
     </nav>
+    <main id="conteudo-principal">
+    <section id="formularioTelaAprovado">
+        <div id="statusConteudo">
+        <h1 id="styleTituloh1"><strong>Proposta N° 00001</strong></h1>
+        <div id="statusAgrupadoAprovado">
+        <img id="styleImage" src="../../../app/img/statusAprovado.png">
+        <h2 id="styleTituloh2">STATUS: APROVADO</h2>
+        </div>
+        <p id="styleParaCorrentistas"><strong>Taxa de 8% ao ano para correntistas</strong></p>
+        <P id="styleAoAnoParaNaoCorrentistas"><strong>Taxa de 10% ao ano para não correntistas</strong></P>
+        <p id="styleParcelaInicial"><strong>Parcela Inicial {{calculandoParcelaInicial | currency}}</strong></p>
+        <p id="styleValorTotal"><strong>Valor total aprovado: {{sub | currency}}</strong></p>
+        <p id="styleSecurity"><strong>Seguro Só Vamu Security.</strong></p>
+        <p id="stylePrimeiraUltimaParcela"><strong>Desconto na primeira e na última parcela</strong></p>
 
-    <section>
-        <h1>Proposta N° 00001</h1>
-        <img src="../../../app/img/statusAprovado.png">
-        <h2>STATUS: APROVADO</h2>
-        <p>Taxa de 8% ao ano para correntistas</p>
-        <P>Taxa de 10% ao ano para não correntistas</P>
-        <p>Parcela Inicial {{calculandoParcelaInicial | currency}}</p>
-        <p>Valor total aprovado: {{sub | currency}} </p>
-        <p>Seguro Só Vamu Security.</p>
-        <p>Desconto na primeira e na última parcela</p>
-
-        <button ng-click="irParaHome()">IR PARA A TELA INICIAL</button>
+        <button id="btnIrTelaInicial" class="btn btn-primary" ng-click="irParaHome()" >IR PARA A TELA INICIAL</button>
+        </div>
 
     </section>
+    </main>
+    <footer id="footerStyleTelas">
+        
+    </footer>
 </body>
 </html>

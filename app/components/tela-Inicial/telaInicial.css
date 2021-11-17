@@ -1,0 +1,45 @@
+#formularioInicio{
+    background: #FFFF;
+    margin: 10px;
+    margin-top: 0px;
+    margin-bottom: 1px;
+    padding-top: 20px ;
+    padding: 20px;
+    /* background-color: red; */
+    border: 1px solid rgb(214, 213, 213);
+    border-radius: 8px;
+    box-shadow: 0px 2px  #a59ab6;
+}
+
+#infoTituloSub{
+
+    text-align: center;
+    
+}
+
+#tituloh3{
+    
+    margin: -10px;
+}
+#subtituloParagrafo{
+    margin-top: 30px;
+}
+
+#dadosSubtitulo{
+    margin-left: 10px;
+}
+
+#footertelaInicial{
+    margin-top: 3px;
+    background: rgb(242, 242, 243);
+
+    height: 575px;
+}
+
+#marcaDaguaSoVamu{
+    margin-top: 250px;
+    float:right;
+}
+#btnSimularFinancimento{
+    background:#6200EE ;
+}

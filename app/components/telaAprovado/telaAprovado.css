@@ -1,0 +1,33 @@
+#formularioTelaAprovado{
+    background: #FFFF;
+    margin: 10px;
+    margin-top: 0px;
+    margin-bottom: 1px;
+    padding-top: 20px ;
+    padding: 20px;
+    /* background-color: red; */
+    border: 1px solid rgb(214, 213, 213);
+    border-radius: 8px;
+    box-shadow: 0px 2px  #a59ab6;
+}
+
+#statusConteudo{
+    text-align: center;
+}
+
+#styleTituloh1{
+    margin-top: -20px;
+}
+
+#statusAgrupadoAprovado{
+    padding: 50px;
+}
+#styleTituloh2{
+    
+    color: #A5D76E;
+}
+
+#btnIrTelaInicial{
+    margin-top: 50px;
+    background: #6200EE;
+}

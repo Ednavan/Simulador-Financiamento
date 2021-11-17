@@ -21,51 +21,59 @@
     <main id="conteudo-principal">
         <section id="formularioImovel">
             <form name="form">
-                <div class="row"> 
-                <div class="col-4">
-                <select class="" name="imovel" id="imovel" ng-options=" listagemTipos for listagemTipos in selecImovelCerto"  ng-model="data.imovel" ng-required="true" >
-                <option value="">Tipo do Imóvel</option>
-                </select>
+                <div class="row">
+                    <div class="col-4">
+                        <select class="" name="imovel" id="imovel"
+                            ng-options=" listagemTipos for listagemTipos in selecImovelCerto" ng-model="data.imovel"
+                            ng-required="true">
+                            <option value="">Tipo do Imóvel</option>
+                        </select>
+                    </div>
+
+                    <div class="col-4">
+                        <input id="dinheiroRenda" name="dinheiroRenda" class="dinheiroRenda "
+                            style="display:inline-block" ng-model="data.renda" placeholder="Renda Mensal"
+                            ng-required="true">
+                    </div>
+
+                    <div class="col-4">
+                        <input id="dinheiroValorImovel" name="dinheiroValorImovel" class="dinheiroValorImovel "
+                            style="display:inline-block" ng-model="data.valor" placeholder="Valor do Imóvel"
+                            ng-required="true">
+
+                    </div>
+
                 </div>
 
-                <div class="col-4">
-                <input id="dinheiroRenda" name="dinheiroRenda" class="dinheiroRenda " style="display:inline-block"
-                    ng-model="data.renda" placeholder="Renda Mensal" ng-required="true">
-                </div>
 
-                <div class="col-4">
-                <input id="dinheiroValorImovel" name="dinheiroValorImovel" class="dinheiroValorImovel " style="display:inline-block"
-                    ng-model="data.valor" placeholder="Valor do Imóvel" ng-required="true">
-                    
-                </div>
-
-                </div>
-               
-                
                 <div id="referenciandoValorEntradaQtdParcelas" class="row">
-                <div class="col-4">
-                <input id="dinheiroValorEntrada" name="dinheiroValorEntrada" class="dinheiroValorEntrada" style="display:inline-block"
-                    ng-model="data.valorEntrada" placeholder="Valor da entrada" ng-required="true">
-                </div>
+                    <div class="col-4">
+                        <input id="dinheiroValorEntrada" name="dinheiroValorEntrada" class="dinheiroValorEntrada"
+                            style="display:inline-block" ng-model="data.valorEntrada" placeholder="Valor da entrada"
+                            ng-required="true">
+                    </div>
 
-                <div class="col-4">
-                <div ng-show="FormulaDosVintePorCento()">Preencha com no mínimo 20% do valor do imóvel</div>
-                <input id="inputQtdParcelamento" ng-model="data.qtdParcelas" min="1" max="360" type="number"
-                    placeholder="Em quantas parcela deseja parcelar?" ng-required="true">
-                </div>
+                    <div class="col-4">
+                        <div ng-show="FormulaDosVintePorCento()">Preencha com no mínimo 20% do valor do imóvel</div>
+                        <input id="inputQtdParcelamento" ng-model="data.qtdParcelas" min="1" max="360" type="number"
+                            placeholder="Em quantas parcela deseja parcelar?" ng-required="true">
+                    </div>
                 </div>
                 <footer id="footerImovel">
-                <div id="buttonVoltarSimular">
-                <button id="btnVoltar" class="btn btn-primary" ng-click="voltarPage()"><strong>VOLTAR</strong></button>
-                <button id="btnSimular" ng-click="irProximaPage()" class="btn btn-primary" ng-disabled="form.$invalid"><strong>SIMULAR</strong></button>
-                </div>
+                    <div id="buttonVoltarSimular">
+                        <button id="btnVoltar" class="btn btn-primary"
+                            ng-click="voltarPage()"><strong>VOLTAR</strong></button>
+                        <button id="btnSimular" ng-click="irProximaPage()" class="btn btn-primary"
+                            ng-disabled="form.$invalid"><strong>SIMULAR</strong></button>
+                    </div>
                 </footer>
             </form>
         </section>
         <br>
     </main>
     <footer id="footerStyleTelas">
-  
+
     </footer>
 </body>
+
 </html>

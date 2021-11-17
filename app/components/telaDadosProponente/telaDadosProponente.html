@@ -57,7 +57,7 @@
                 </div>
                 <div class="row">
                     <div class="label-float col-4">
-                        <input type="text" id="definindoEmail" name="definindoEmail" ng-model="data.infoEmail"
+                        <input type="text" id="definindoEmail" ng-pattern="emailFormat" name="definindoEmail" ng-model="data.infoEmail"
                             placeholder=" " ng-required="true">
                             <label>E-mail</label>
                         <div ng-hide="customerForm.definindoEmail.$touched">Preencha com um email válido</div>

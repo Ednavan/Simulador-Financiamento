@@ -1,5 +1,6 @@
 sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
     $scope.tituloHeadPage = "Dados Proponente"
+    $scope.emailFormat = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
     
     
     $scope.irProximaPage = function(nome, profi, cpf, email, nascimento, cep, celular){

@@ -13,22 +13,36 @@
             <h1>Simulador de Financiamentos</h1>
         </div>
     </header>
-    <nav>
-        <h2>Reprovado</h2>
+    <nav id="tipoDeCadastramento">
+        <h2 id="dadosSubtitulo">Reprovado</h2>
     </nav>
-    <main>
-        <section>
+    <main id="conteudo-principal">
+        <section id="formularioTelaReprovado">
+            <div id="stsReprovadoConfiguracao">
             <h1>Proposta N° 00001</h1>
+            <div id="subtituloAgrupandoImagem">
             <img src="../../../app/img/statusReprovado.png">
-            <p>Infelizmente não foi possível aprovar seu financiamento.</p>
-            <p>Não desanime, reunimos algumas dicas que pode ajudar na sua próxima simulação:</p>
-            <br>
-            <p>Mantenha seu CPF em dia e sem restrições.</p>
-            <p>Dados de endereço, e-mail, telefone sempre atualizados.</p>
-            <p>Melhore seu relacionamento com o banco, movimentando sua conta</p>
+            <h2 id="subtituloInformandoReprovado">STATUS: REPROVADO</h2>
+            </div>
 
-            <button ng-click="irParaHome()">IR PARA TELA INICIAL</button>
+            <div id="stsReprovadodiv1">
+            <p><strong>Infelizmente não foi possível aprovar seu financiamento.</strong></p>
+            <p><strong>Não desanime, reunimos algumas dicas que pode ajudar na sua próxima simulação:</strong></p>
+            <br>
+            </div>
+
+            <div id="stsReprovadodiv2">
+            <p><strong> • Mantenha seu CPF em dia e sem restrições.</strong> </p>
+            <p><strong> • Dados de endereço, e-mail, telefone sempre atualizados.</strong> </p>
+            <p><strong> • Melhore seu relacionamento com o banco, movimentando sua conta</strong></p>
+            </div>
+
+            <button id="btnTeladeInicio" class="btn btn-primary" ng-click="irParaHome()">IR PARA TELA INICIAL</button>
+            </div>
         </section>
     </main>
+    <footer id="footerStyleTelas">
+        
+    </footer>
 </body>
 </html>

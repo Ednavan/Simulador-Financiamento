@@ -128,4 +128,7 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
     });
    
 })
-$('.dinheiro').mask('#.##0,00', { reverse: true });
+$('.dinheiroRenda').mask('#.##0,00', { reverse: true });
+$('.dinheiroValorImovel').mask('#.##0,00', { reverse: true });
+$('.dinheiroValorEntrada').mask('#.##0,00', { reverse: true });
+$('.dinheiroRenda').mask('#.##0,00', { reverse: true });

@@ -15,31 +15,57 @@
             <h1>Simulador de Financiamentos</h1>
         </div>
     </header>
-    <nav>
-        <h2>Dados do imóvel</h2>
+    <nav id="tipoDeCadastramento">
+        <h2 id="dadosSubtitulo">Dados do imóvel</h2>
     </nav>
-    <main>
-        <section>
+    <main id="conteudo-principal">
+        <section id="formularioImovel">
             <form name="form">
-                <select class="form-control" name="imovel" id="imovel" ng-options=" listagemTipos for listagemTipos in selecImovelCerto"  ng-model="data.imovel" ng-required="true" >
+                <div class="row"> 
+                <div class="col-4">
+                <select class="" name="imovel" id="imovel" ng-options=" listagemTipos for listagemTipos in selecImovelCerto"  ng-model="data.imovel" ng-required="true" >
                 <option value="">Tipo do Imóvel</option>
-            </select>
+                </select>
                 </div>
-                <input id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block"
+
+                <div class="col-4">
+                <input id="dinheiroRenda" name="dinheiroRenda" class="dinheiroRenda " style="display:inline-block"
                     ng-model="data.renda" placeholder="Renda Mensal" ng-required="true">
-                <input id="dinheiro" name="dinheiro" class="dinheiro form-control" style="display:inline-block"
+                </div>
+
+                <div class="col-4">
+                <input id="dinheiroValorImovel" name="dinheiroValorImovel" class="dinheiroValorImovel " style="display:inline-block"
                     ng-model="data.valor" placeholder="Valor do Imóvel" ng-required="true">
-                <input id="dinheiro" name="entrada" class="dinheiro form-control" style="display:inline-block"
+                    
+                </div>
+
+                </div>
+               
+                
+                <div id="referenciandoValorEntradaQtdParcelas" class="row">
+                <div class="col-4">
+                <input id="dinheiroValorEntrada" name="dinheiroValorEntrada" class="dinheiroValorEntrada" style="display:inline-block"
                     ng-model="data.valorEntrada" placeholder="Valor da entrada" ng-required="true">
+                </div>
+
+                <div class="col-4">
                 <div ng-show="FormulaDosVintePorCento()">Preencha com no mínimo 20% do valor do imóvel</div>
-                <input ng-model="data.qtdParcelas" min="1" max="360" type="number"
+                <input id="inputQtdParcelamento" ng-model="data.qtdParcelas" min="1" max="360" type="number"
                     placeholder="Em quantas parcela deseja parcelar?" ng-required="true">
-                <br>
-                <button ng-click="voltarPage()">VOLTAR</button>
-                <button ng-click="irProximaPage()" ng-disabled="form.$invalid">SIMULAR</button>
+                </div>
+                </div>
+                <footer id="footerImovel">
+                <div id="buttonVoltarSimular">
+                <button id="btnVoltar" class="btn btn-primary" ng-click="voltarPage()"><strong>VOLTAR</strong></button>
+                <button id="btnSimular" ng-click="irProximaPage()" class="btn btn-primary" ng-disabled="form.$invalid"><strong>SIMULAR</strong></button>
+                </div>
+                </footer>
             </form>
         </section>
         <br>
     </main>
+    <footer id="footerStyleTelas">
+  
+    </footer>
 </body>
 </html>

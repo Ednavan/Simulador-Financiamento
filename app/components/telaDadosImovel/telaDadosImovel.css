@@ -5,3 +5,74 @@ input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
 #nomeInvalidoErro{
     color: red;
 }
+
+#imovel{
+    width: 100%;;
+}
+
+#dinheiroRenda{
+    width: 100%;
+}
+
+#dinheiroValorImovel{
+    width: 100%;
+}
+
+#dinheiroValorEntrada{
+    
+    width: 100%;
+}
+
+#inputQtdParcelamento{
+    width: 100%;
+}
+
+#referenciandoValorEntradaQtdParcelas{
+    padding-top: 50px;
+}
+
+#formularioImovel{
+    background: #FFFF;
+    margin: 10px;
+    margin-top: 0px;
+    margin-bottom: -20px;
+    padding-top: 20px ;
+
+    padding: 20px;
+    /* background-color: red; */
+    border: 1px solid rgb(214, 213, 213);
+    border-radius: 8px;
+    box-shadow: 0px 2px  #a59ab6;
+}
+
+#btnSimular{
+float: right;
+background-color: #FFFF;
+color: #6200EE;
+}
+
+#btnVoltar{
+    background-color: #FFFF;
+    color: #6200EE;
+}
+
+#footerImovel{
+    margin-top: 40px;
+
+    height: 80px;
+    border-top: 1px solid rgb(229, 230, 230);
+  
+    
+    padding:  1px;
+}
+
+
+#buttonVoltarSimular{
+    margin-top: 25px;
+}
+
+#footerStyleTelas{
+    border-top: 1px solid rgb(229, 230, 230);
+    
+    height: 191px;
+}

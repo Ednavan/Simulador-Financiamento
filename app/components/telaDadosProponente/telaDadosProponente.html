@@ -17,7 +17,7 @@
     </header>
 
     <nav id="tipoDeCadastramento">
-        <h2>Dados proponente</h2>
+        <h2 id="dadosSubtitulo">Dados proponente</h2>
     </nav>
 
     <main id="conteudo-principal">
@@ -98,12 +98,19 @@
                         <label>Celular</label>
                     </div>
                 </div>
-                <button ng-click="buttonCancelar()">CANCELAR</button>
-                <button
-                    ng-click="irProximaPage('infoNomeCompleto', 'infoProfissao', 'infoCPF', 'infoEmail','infoDataNascimento','infoCEP','infoCelular')"
-                    ng-disabled="customerForm.$invalid || menorIdade()">CONTINUAR</button>
+
+                <footer id="footerProponente">
+                <div id="buttonCancelarButtonContinuar">
+                <button id=btnCancelar ng-click="buttonCancelar()" class="btn btn-primary"><strong>CANCELAR</strong></button>
+                <button id="btnContinuar" class="btn btn-primary"  ng-click="irProximaPage('infoNomeCompleto', 'infoProfissao', 'infoCPF', 'infoEmail','infoDataNascimento','infoCEP','infoCelular')"
+                    ng-disabled="customerForm.$invalid || menorIdade()"><strong>CONTINUAR</strong> </button>
+                </div>
+                </footer>
             </form>
         </section>
     </main>
+    <footer id="footerStyleTelas">
+        
+    </footer>
 </body>
 </html>

@@ -4,7 +4,7 @@ input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
 
 
 
-#nomeInvalidoErro{
+#nomeInvalidoErro, #profissInvalidoErro, #erroInvalidadoCpf, #emailInvalido, #dataInvalidaErro, #cepInvalidoErro, #celInvalidoErro{
     color: red;
 }
 

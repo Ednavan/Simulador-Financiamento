@@ -46,8 +46,20 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
         var valorEntrada = $scope.converterNumero($scope.data.valorEntrada);
     
         
-        var realizaCalculoImovel = (0.2 * valorImovel);
-        console.log('Aqui analise feita:   ', realizaCalculoImovel)
+        
+        var vintePorcento = (0.2 * valorImovel);
+        console.log('vinte por cento: ', vintePorcento)
+        $scope.calculandovalorVintePorCento = function(){
+
+            if(valorEntrada < vintePorcento){
+                return true
+            }else{
+                return false
+            }
+        }
+        console.log('Resultado dos vinte por cento: ', $scope.calculandovalorVintePorCento())
+        
+
         // var analisaValorEntrada = {};
 
         // $scope.verificaSeEntradaMenorQueVintePorcento = function(){
@@ -75,16 +87,16 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
 
         console.log('Apos o if',expressaoFormula)
        
-        $http({
-            url: 'http://localhost:3000/bancoDeListaDados',
-            method: 'POST',
-            data: identificaDadosCadastrados
-        }).then(function () {
-            console.log('sucesso')
+        // $http({
+        //     url: 'http://localhost:3000/bancoDeListaDados',
+        //     method: 'POST',
+        //     data: identificaDadosCadastrados
+        // }).then(function () {
+        //     console.log('sucesso')
 
-        }).catch(function () {
-            console.log('não foi possivel estabelecer conexão')
-        });
+        // }).catch(function () {
+        //     console.log('não foi possivel estabelecer conexão')
+        // });
 
     }
 
@@ -104,12 +116,12 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
     //     return entrada < (0.2 * imovel) 
     // }
 
-    $http.get('http://localhost:3000/bancoDeListaDados/').
-    then(function (res) {
-        (console.log(res))
+    // $http.get('http://localhost:3000/bancoDeListaDados/').
+    // then(function (res) {
+    //     (console.log(res))
 
-        $scope.bancoDeListaDados = res.identificaDadosCadastrados
-    })
+    //     $scope.bancoDeListaDados = res.identificaDadosCadastrados
+    // })
 
     
     $scope.voltarPage = function () {

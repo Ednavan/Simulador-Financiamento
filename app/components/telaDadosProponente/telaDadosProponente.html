@@ -78,7 +78,7 @@
 
                     </div>
                     <div class="label-float col-4">
-                        <input id="InputCep" name="definindoCep" ng-model="data.infoCEP" placeholder=" "
+                        <input id="InputCep" name="definindoCep" ng-pattern="/^([\d]{2})([\d]{3})([\d]{3})|^[\d]{2}.[\d]{3}-[\d]{3}$/" type="text" ng-model="data.infoCEP" placeholder=" "
                             ng-required="true">
                             <label>CEP</label>
                         <div ng-hide="customerForm.definindoCep.$touched">Preencha com o seu CEP</div>

@@ -23,41 +23,45 @@
             <form name="form">
                 <div class="row">
                     <div class="col-4">
-                        <select class="" name="imovel" id="imovel"
+                        <!-- <select class="label-float " name="imovel" id="imovel"
                             ng-options=" listagemTipos for listagemTipos in selecImovelCerto" ng-model="data.imovel"
                             ng-required="true">
                             <option value="">Tipo do Imóvel</option>
-                        </select>
+                        </select> -->
+                        <div class="floating-label">
+                            <select class="floating-select" onclick="this.setAttribute('value', this.value);" value="" name="imovel" id="imovel"
+                            ng-options=" listagemTipos for listagemTipos in selecImovelCerto" ng-model="data.imovel">
+
+                            </select>
+                            <label >Tipo de Imóvel</label>
+                        </div>
                     </div>
 
                     <div class="label-float col-4">
                         <input id="dinheiroRenda" name="dinheiroRenda" class="dinheiroRenda "
                             style="display:inline-block" ng-model="data.renda" placeholder="Renda Mensal"
                             ng-required="true">
-                            <label>Nome completo</label>
+                            <label>Renda Mensal</label>
                     </div>
-
-                    <div class="col-4">
+                    <div class="label-float col-4">
                         <input id="dinheiroValorImovel" name="dinheiroValorImovel" class="dinheiroValorImovel "
-                            style="display:inline-block" ng-model="data.valor" placeholder="Valor do Imóvel"
-                            ng-required="true">
-
+                            style="display:inline-block" ng-change="novoCalculo()" ng-model="data.valor" placeholder="Valor do Imóvel"
+                            required>
+                            <label>Valor do Imovel</label>
                     </div>
-
                 </div>
-
-
                 <div id="referenciandoValorEntradaQtdParcelas" class="row">
-                    <div class="col-4">
+                    <div class="label-float col-4">
                         <input id="dinheiroValorEntrada" name="dinheiroValorEntrada" class="dinheiroValorEntrada"
-                            style="display:inline-block" ng-model="data.valorEntrada" placeholder="Valor da entrada"
-                            ng-required="true">
+                            style="display:inline-block" ng-change="novoCalculo()" ng-model="data.valorEntrada" placeholder="Valor da entrada"
+                            required>
+                            <label>Valor do Entrada</label>
                     </div>
-
-                    <div class="col-4">
+                    <div class="label-float col-4">
                         <div ng-show="FormulaDosVintePorCento()">Preencha com no mínimo 20% do valor do imóvel</div>
-                        <input id="inputQtdParcelamento" ng-model="data.qtdParcelas" min="1" max="360" type="number"
+                        <input id="inputQtdParcelamento"  ng-model="data.qtdParcelas" min="1" max="360" type="number"
                             placeholder="Em quantas parcela deseja parcelar?" ng-required="true">
+                            <label> Em quantas parcela deseja parcelar? </label>
                     </div>
                 </div>
                 <footer id="footerImovel">
@@ -65,9 +69,10 @@
                         <button id="btnVoltar" class="btn btn-primary"
                             ng-click="voltarPage()"><strong>VOLTAR</strong></button>
                         <button id="btnSimular" ng-click="irProximaPage()" class="btn btn-primary"
-                            ng-disabled="form.$invalid || calculandovalorVintePorCento"><strong>SIMULAR</strong></button>
+                            ng-disabled="form.$invalid" ng-disabled="novoCalculo.$invalid"><strong>SIMULAR</strong></button>
                     </div>
                 </footer>
+                
             </form>
         </section>
         <br>

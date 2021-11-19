@@ -49,17 +49,17 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
         
         var vintePorcento = (0.2 * valorImovel);
         console.log('vinte por cento: ', vintePorcento)
-        $scope.calculandovalorVintePorCento = function(){
+        $scope.novoCalculo = function(){
 
             if(valorEntrada < vintePorcento){
-                return true
+               true
             }else{
-                return false
+               false
             }
         }
+     
         console.log('Resultado dos vinte por cento: ', $scope.calculandovalorVintePorCento())
-        
-
+       
         // var analisaValorEntrada = {};
 
         // $scope.verificaSeEntradaMenorQueVintePorcento = function(){

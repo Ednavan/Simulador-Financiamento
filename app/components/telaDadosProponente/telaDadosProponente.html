@@ -90,8 +90,8 @@
 
                 <div class="row">
                     <div class="label-float col-4">
-                        <input id="inputCelular"  name="inputCelular"  type="text" ng-model="data.infoCelular"
-                            placeholder=" " required>
+                        <input id="inputCelular" ng-pattern="celFormat" name="inputCelular"  type="text" ng-model="data.infoCelular"
+                            placeholder=" " ng-required="true">
                             <label>Celular</label>
                         <div ng-hide="definindoCelular.$touched">Preencha com seu celular</div>
                         <div id="celInvalidoErro"  ng-show="customerForm.definindoCelular.$touched && customerForm.definindoCelular.$invalid">

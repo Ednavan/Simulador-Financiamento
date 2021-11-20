@@ -84,7 +84,7 @@ color: #6200EE;
   
   .floating-label {
     position: relative;
-    margin-top: 5%;
+    margin-top: 9%;
 
   }
   
@@ -107,7 +107,7 @@ color: #6200EE;
   }
   
   label {
-    color: #999;
+    color: #000000DE;
     font-size: 14px;
     font-weight: normal;
     position: absolute;

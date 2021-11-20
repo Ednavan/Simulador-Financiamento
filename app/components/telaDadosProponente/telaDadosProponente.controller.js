@@ -1,8 +1,11 @@
 sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
     $scope.tituloHeadPage = "Dados Proponente"
+
     $scope.emailFormat = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
 
     $scope.celFormat  = /^(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})$/;
+
+    // $scope.regEx=/^[0-9]{10,10}$/;
     
     
     $scope.irProximaPage = function(nome, profi, cpf, email, nascimento, cep, celular){
@@ -102,8 +105,8 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
 
 $('#inputCpf').mask('000.000.000-00', {reverse: true});
 
-$('#inputCelular').mask('(00) 0 0000-0000');
-
+// $('#inputCelular').mask('(00) 0 0000-0000', {reverse: true});
+$('#inputCelular').mask('(00) 00000-0000');
 $('#InputCep').mask('00.000-000', {reverse: true});
 
 

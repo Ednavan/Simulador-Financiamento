@@ -29,7 +29,7 @@
                         <input type="text" id="nomeCompleto" name="nomeCompleto" ng-pattern="/^[a-zA-ZáéíóúÁÉÍÓÚ\s]*$/"
                         ng-minlength="3" ng-model="data.infoNomeCompleto" placeholder=" " ng-required="true">
                         <label>Nome completo</label>
-                        <div ng-hide="customerForm.nomeCompleto.$touched">Preencha com seu nome completo</div>
+                        <div ng-hide="customerForm.nomeCompleto.$dirty">Preencha com seu nome completo</div>
                         <div id="nomeInvalidoErro"
                             ng-show="customerForm.nomeCompleto.$touched && customerForm.nomeCompleto.$invalid">Nome inválido</div>
                         </div>
@@ -39,7 +39,7 @@
                         <input type="text" id="definindoProfissao" name="definindoProfissao" ng-pattern="/^[a-zA-ZáéíóúÁÉÍÓÚ\s]*$/"
                             ng-model="data.infoProfissao" placeholder=" " ng-required="true">
                             <label>Profissão</label>
-                        <div ng-hide="customerForm.definindoProfissao.$touched">Preencha com a sua profissão</div>
+                        <div ng-hide="customerForm.definindoProfissao.$dirty">Preencha com a sua profissão</div>
                         <div id="profissInvalidoErro"
                             ng-show="customerForm.definindoProfissao.$touched && customerForm.definindoProfissao.$invalid">
                             
@@ -50,7 +50,7 @@
                         <input id="inputCpf" name="definindoCpf" ng-pattern="/^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}|[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2})$/" type="text" ng-model="data.infoCPF" placeholder=" "
                             ng-required="true">
                             <label>CPF</label>
-                        <div ng-hide="customerForm.definindoCpf.$touched">Preencha com o seu CPF</div>
+                        <div ng-hide="customerForm.definindoCpf.$dirty">Preencha com o seu CPF</div>
                         <div id="erroInvalidadoCpf" ng-show="customerForm.definindoCpf.$touched && customerForm.definindoCpf.$invalid">CPF
                             inválido</div>
                     </div>
@@ -60,7 +60,7 @@
                         <input type="text" id="definindoEmail" ng-pattern="emailFormat" name="definindoEmail" ng-model="data.infoEmail"
                             placeholder=" " ng-required="true">
                             <label>E-mail</label>
-                        <div ng-hide="customerForm.definindoEmail.$touched">Preencha com um email válido</div>
+                        <div ng-hide="customerForm.definindoEmail.$dirty">Preencha com um email válido</div>
                         <div id="emailInvalido" ng-show="customerForm.definindoEmail.$touched && customerForm.definindoEmail.$invalid">
                             Email inválido</div>
                     </div>
@@ -70,7 +70,7 @@
                         <input type="date" id="definindoDataNascimento" name="definindoDataNascimento"
                             ng-model="data.infomracoesNascimento" placeholder=" " ng-required="true">
                             <label>Data de nascimento</label>
-                        <div ng-hide="customerForm.definindoDataNascimento.$touched">Preencha com sua data de nascimento
+                        <div ng-hide="customerForm.definindoDataNascimento.$dirty">Preencha com sua data de nascimento
                         </div>
                         <div id="dataInvalidaErro"
                             ng-show="customerForm.definindoDataNascimento.$touched && customerForm.definindoDataNascimento.$invalid">
@@ -81,7 +81,7 @@
                         <input id="InputCep" name="definindoCep" ng-pattern="/^([\d]{2})([\d]{3})([\d]{3})|^[\d]{2}.[\d]{3}-[\d]{3}$/" type="text" ng-model="data.infoCEP" placeholder=" "
                             ng-required="true">
                             <label>CEP</label>
-                        <div ng-hide="customerForm.definindoCep.$touched">Preencha com o seu CEP</div>
+                        <div ng-hide="customerForm.definindoCep.$dirty">Preencha com o seu CEP</div>
                         <div id="cepInvalidoErro" ng-show="customerForm.definindoCep.$touched && customerForm.definindoCep.$invalid">O CEP
                             deve ter 9 dígitos</div>
 
@@ -90,12 +90,12 @@
 
                 <div class="row">
                     <div class="label-float col-4">
-                        <input id="inputCelular" ng-pattern="celFormat" name="inputCelular"  type="text" ng-model="data.infoCelular"
+                        <input id="inputCelular"  name="inputCelular" ng-pattern="celFormat" type="text" ng-model="data.infoCelular"
                             placeholder=" " ng-required="true">
                             <label>Celular</label>
-                        <div ng-hide="definindoCelular.$touched">Preencha com seu celular</div>
-                        <div id="celInvalidoErro"  ng-show="customerForm.definindoCelular.$touched && customerForm.definindoCelular.$invalid">
-                            Numero inválido do celular</div>
+                        <div ng-hide="customerForm.inputCelular.$dirty">Preencha com seu celular</div>
+                        <div id="celInvalidoErro"  ng-show="customerForm.inputCelular.$touched && customerForm.inputCelular.$invalid">
+                         Numero inválido do celular</div>
                     </div>
                 </div>
 

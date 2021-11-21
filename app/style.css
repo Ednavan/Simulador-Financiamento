@@ -46,8 +46,6 @@
 }
 
 
-
-/* label-float */
 body{
     font-family: sans-serif;
   }
@@ -82,7 +80,7 @@ body{
     pointer-events: none;
     position: absolute;
    
-    top: calc(30% - 8px);
+    top: calc(39% - 8px);
     left: 15px;
     transition: all .1s linear;
     -webkit-transition: all .1s linear;
@@ -107,7 +105,7 @@ body{
   }
   .label-float input:required:invalid  + label{
    
-    color: #3951b2;
+    color: #000000;
   }
   .label-float input:focus + label,
   .label-float input:not(:placeholder-shown) + label{
@@ -115,3 +113,5 @@ body{
     top: 0px;
     color: #3951b2;
   }
+  
+

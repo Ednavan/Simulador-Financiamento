@@ -82,4 +82,8 @@ color: #6200EE;
 }
 
 
+#nomeMensagemNomeComppleto, #messagemPreenchaComProfissao, #menssagemPreenchaCPF,#menssagemEstilosCormail, #menssagemDateNiver, #menssagemCep, #menssagemCelInformation{
+    color: rgba(115, 116, 117, 0.781);
+    font-size: 14px;
+}
 

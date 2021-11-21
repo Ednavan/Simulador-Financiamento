@@ -134,10 +134,15 @@ color: #6200EE;
   }
   
   
-
+#rendaInvalidaErro, #tipoImovelInvalido, #qtdParcelasErro, #valorEntradaErro, #valorImovelErro, #tipoImovelError{
+    color: red;
+}
 
   
-
+#mensagemQtdParcelas, #menssagemValorEntrada, #menssagemValorImovel, #menssagemRendaMensal, #menssagemTipoImovel{
+    color: rgba(115, 116, 117, 0.781);
+    font-size: 14px;
+}
   
   
 

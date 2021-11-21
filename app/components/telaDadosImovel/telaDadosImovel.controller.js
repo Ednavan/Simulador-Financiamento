@@ -58,7 +58,7 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
             }
         }
      
-        console.log('Resultado dos vinte por cento: ', $scope.calculandovalorVintePorCento())
+        console.log('Resultado dos vinte por cento: ', $scope.novoCalculo())
        
         // var analisaValorEntrada = {};
 

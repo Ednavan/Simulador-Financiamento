@@ -20,7 +20,7 @@
     </nav>
     <main id="conteudo-principal">
         <section id="formularioImovel">
-            <form name="form">
+            <form name="formularioCadastroInformcaoesImovel">
                 <div class="row">
                     <div class="col-4">
                         <!-- <select class="label-float " name="imovel" id="imovel"
@@ -34,6 +34,8 @@
 
                             </select>
                             <label >Tipo de Imóvel</label>
+                            <div id="menssagemTipoImovel" ng-hide="formularioCadastroInformcaoesImovel.imovel.$dirty" >Preencha com o tipo do imóvel</div>
+                            <div id="tipoImovelError" ng-show="formularioCadastroInformcaoesImovel.imovel.$touched && formularioCadastroInformcaoesImovel.imovel.$invalid">Tipo de imóvel inválido</div>
                         </div>
                     </div>
 
@@ -42,12 +44,16 @@
                             ng-model="data.renda" 
                             ng-required="true">
                             <label>Renda Mensal</label>
+                            <div id="menssagemRendaMensal" ng-hide="formularioCadastroInformcaoesImovel.dinheiroRenda.$dirty" >Preencha com sua renda mensal</div>
+                            <div id="rendaInvalidaErro" ng-show="formularioCadastroInformcaoesImovel.dinheiroRenda.$touched && formularioCadastroInformcaoesImovel.dinheiroRenda.$invalid">Renda mensal inválida</div>   
                     </div>
                     <div class="label-float col-4">
                         <input id="dinheiroValorImovel" name="dinheiroValorImovel" class="dinheiroValorImovel "
                             style="display:inline-block" ng-change="novoCalculo()" ng-model="data.valor" placeholder="Valor do Imóvel"
                             required>
                             <label>Valor do Imovel</label>
+                            <div id="menssagemValorImovel" ng-hide="formularioCadastroInformcaoesImovel.dinheiroValorImovel.$dirty" >Preencha com o valor do imóvel desejado</div>
+                            <div id="valorImovelErro" ng-show="formularioCadastroInformcaoesImovel.dinheiroValorImovel.$touched && formularioCadastroInformcaoesImovel.dinheiroValorImovel.$invalid">Valor do imóvel inválido</div>
                     </div>
                 </div>
                 <div id="referenciandoValorEntradaQtdParcelas" class="row">
@@ -56,12 +62,16 @@
                             style="display:inline-block" ng-change="novoCalculo()" ng-model="data.valorEntrada" placeholder="Valor da entrada"
                             required>
                             <label>Valor do Entrada</label>
+                            <div id="menssagemValorEntrada" ng-hide="formularioCadastroInformcaoesImovel.dinheiroValorEntrada.$dirty" >Preencha com o valor da entrada</div>
+                            <div id="valorEntradaErro" ng-show="formularioCadastroInformcaoesImovel.dinheiroValorEntrada.$touched && formularioCadastroInformcaoesImovel.dinheiroValorEntrada.$invalid">Preencha com no mínimo 20% do valor do imóvel</div>
                     </div>
                     <div class="label-float col-4">
-                        <div ng-show="FormulaDosVintePorCento()">Preencha com no mínimo 20% do valor do imóvel</div>
-                        <input id="inputQtdParcelamento"  ng-model="data.qtdParcelas" min="1" max="360" type="number"
-                            placeholder="Em quantas parcela deseja parcelar?" ng-required="true">
+                        
+                        <input id="inputQtdParcelamento" name="inputQtdParcelamento"  ng-model="data.qtdParcelas" min="1" max="360" type="number"
+                            placeholder=" " ng-required="true">
                             <label> Em quantas parcela deseja parcelar? </label>
+                            <div id="mensagemQtdParcelas" ng-hide="formularioCadastroInformcaoesImovel.inputQtdParcelamento.$dirty" >Preencha com a quantidade de parcelas</div>
+                            <div id="qtdParcelasErro" ng-show="formularioCadastroInformcaoesImovel.inputQtdParcelamento.$touched && formularioCadastroInformcaoesImovel.inputQtdParcelamento.$invalid">Preencha com no máximo 360 parcelas</div>   
                     </div>
                 </div>
                 <footer id="footerImovel">
@@ -69,7 +79,7 @@
                         <button id="btnVoltar" class="btn btn-primary"
                             ng-click="voltarPage()"><strong>VOLTAR</strong></button>
                         <button id="btnSimular" ng-click="irProximaPage()" class="btn btn-primary"
-                            ng-disabled="form.$invalid" ng-disabled="novoCalculo.$invalid"><strong>SIMULAR</strong></button>
+                            ng-disabled="formularioCadastroInformcaoesImovel.$invalid" ng-disabled="novoCalculo.$invalid"><strong>SIMULAR</strong></button>
                     </div>
                 </footer>
                 

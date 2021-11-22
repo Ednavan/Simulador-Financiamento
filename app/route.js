@@ -17,6 +17,9 @@ angular.module("sincronizando").config(function ($routeProvider) {
     }).when('/listaPropostas', {
         controller: 'ctrlListaPropostas',
         templateUrl: '../app/components/telaListaPropostas/telaListaPropostas.html'
+    }).when('/ausenciaHistoricoProposta',{
+        controller: 'ctrlAusenciaHistoricoPropostas',
+        templateUrl: '../app/components/telaAusenciaDeHistoricoPropostas/telaAusenciaDeHistorico.html'
     })
         .otherwise('/telaInicio')
 

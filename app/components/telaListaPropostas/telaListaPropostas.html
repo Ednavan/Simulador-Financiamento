@@ -1,22 +1,38 @@
-<title>{{}}</title>
+<title>{{headTituloInicial}}</title>
 <body>
     <header id="menuTitulo">
-        <img src="../../../app/img/SoVamuIcone.png">
+        <img type="button" src="../../../app/img/SoVamuIcone.png" ng-click="irParaHome()">
         <div class="h1TituloPrincipal">
             <h1>Simulador de Financiamentos</h1>
         </div>
     </header>
     <nav id="tipoDeCadastramento">
         <h2 id="dadosSubtitulo">HISTÓRICO DE PROPOSTAS</h2>
+
     </nav>
     <main id="conteudo-principal">
         <section  id="formularioImovel">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aut quas iure necessitatibus? Eum repudiandae iste distinctio soluta quibusdam veritatis quis, maxime ullam, nemo fuga mollitia natus atque? A, rem.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quo tempore consectetur magni? Rerum eligendi id velit, ut eveniet, quidem voluptatibus asperiores sequi vel nisi nulla totam provident alias aspernatur.
-            </p>
+        <form>
+           <table>
+               <thead>
+                   <tr>
+                       <td> Nome do proponente  |  </td >
+                       <td> Data da simulação </td >
+                       <td> | Valor total do Imóvel |</td>
+                       <td> Número de parcelas </td>
+                   </tr>
+               </thead>
+               <tbody>
+                  <tr ng-repeat="listaCadastros in bancoDeListaDados">
+                    <td>{{listaCadastros.listaNomes}}</td>
+                    <td>{{listaCadastros.dataDeSimulacao | date: 'dd/MM/yyyy HH:mm'}}</td>
+                    <td>{{listaCadastros.formularioValor}}</td>
+                    <td>{{listaCadastros.formularioQtdParcela}}</td>
+                  </tr> 
+               </tbody>
+           </table>
+        </form>
         </section>
     </main>
-    <footer id="footerStyleTelas">
-
-    </footer>
+ 
 </body>

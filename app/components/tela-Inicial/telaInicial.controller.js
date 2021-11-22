@@ -5,6 +5,11 @@ sincronizando.controller('ctrlTelaInicial', function($scope, $location){
     }
 
     $scope.historicoPropostas = function(){
+
+
+        
         $location.path('/listaPropostas')
     }
+
+    
 })

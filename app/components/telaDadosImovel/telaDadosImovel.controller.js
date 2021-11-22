@@ -89,7 +89,7 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
         console.log('Apos o if',expressaoFormula)
        
         $http({
-            url: 'http://localhost:3000/bancoDeListaDados',
+            url: 'http://localhost:3000/bancoDeListaDados/',
             method: 'POST',
             data: identificaDadosCadastrados
         }).then(function () {
@@ -108,7 +108,13 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
 
         $scope.bancoDeListaDados = res.identificaDadosCadastrados
     })
+    $scope.editar = function (dd) {
 
+        $scope.myVar = dd;
+        console.log('edit', $scope.myVar)
+
+    }
+    
     //     $scope.FormulaDosVintePorCento = function(){
     //         if (!$scope.data) {
     //             return false;

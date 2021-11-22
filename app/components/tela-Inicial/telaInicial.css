@@ -43,3 +43,12 @@
 #btnSimularFinancimento{
     background:#6200EE ;
 }
+
+#btnHistoricoPropostas{
+    float: right;
+    position: absolute;
+    right: 0px;
+    background: #ded9e6;
+    color: #6200EE;
+
+}

@@ -30,7 +30,8 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
             formularioRenda: $scope.converterNumero($scope.data.renda),
             formularioValor: $scope.converterNumero($scope.data.valor),
             formularioValorEntrada: $scope.converterNumero($scope.data.valorEntrada),
-            formularioQtdParcela: $scope.data.qtdParcelas
+            formularioQtdParcela: $scope.data.qtdParcelas,
+            dataDeSimulacao: $scope.dataSimulacao = new Date
         }
 
         $location.search(identificaDadosCadastrados)
@@ -87,20 +88,26 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
 
         console.log('Apos o if',expressaoFormula)
        
-        // $http({
-        //     url: 'http://localhost:3000/bancoDeListaDados',
-        //     method: 'POST',
-        //     data: identificaDadosCadastrados
-        // }).then(function () {
-        //     console.log('sucesso')
+        $http({
+            url: 'http://localhost:3000/bancoDeListaDados',
+            method: 'POST',
+            data: identificaDadosCadastrados
+        }).then(function () {
+            console.log('sucesso')
 
-        // }).catch(function () {
-        //     console.log('não foi possivel estabelecer conexão')
-        // });
-
+        }).catch(function () {
+            console.log('não foi possivel estabelecer conexão')
+        });
+        
+        console.log('DATA QUE FOI SALVO',   $scope.dataSimulacao)
     }
 
-    
+     $http.get('http://localhost:3000/bancoDeListaDados/').
+    then(function (res) {
+        (console.log(res))
+
+        $scope.bancoDeListaDados = res.identificaDadosCadastrados
+    })
 
     //     $scope.FormulaDosVintePorCento = function(){
     //         if (!$scope.data) {
@@ -116,12 +123,7 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
     //     return entrada < (0.2 * imovel) 
     // }
 
-    // $http.get('http://localhost:3000/bancoDeListaDados/').
-    // then(function (res) {
-    //     (console.log(res))
-
-    //     $scope.bancoDeListaDados = res.identificaDadosCadastrados
-    // })
+   
 
     
     $scope.voltarPage = function () {

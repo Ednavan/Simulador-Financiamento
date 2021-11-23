@@ -27,7 +27,15 @@
                     <td>{{listaCadastros.listaNomes}}</td>
                     <td>{{listaCadastros.dataDeSimulacao | date: 'dd/MM/yyyy HH:mm'}}</td>
                     <td>{{listaCadastros.formularioValor}}</td>
-                    <td>{{listaCadastros.formularioQtdParcela}}</td>
+                    <td> {{listaCadastros.formularioQtdParcela}}<p>parcelas</p> </td>
+                    <td>
+                    <button id="btnVisualPropostaHistorico" class="btn">
+                        <img src="../../../app/img/visualizar.png">
+                    </button>
+                    <button id="btnExcluirPropostaHistorico" class="btn">
+                        <img src="../../../app/img/excluir.png">
+                    </button>
+                    </td>
                   </tr> 
                </tbody>
            </table>

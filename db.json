@@ -8,21 +8,6 @@
       "listaNascimento": "Sat Sep 27 2008 00:00:00 GMT-0300 (Hora padrão de Brasília)",
       "listaCep": "88.473-273",
       "listaCelular": "(83) 98630-7331",
-      "formularioTipo": "Apartamento",
-      "formularioRenda": 10000,
-      "formularioValor": 100000,
-      "formularioValorEntrada": 20000,
-      "formularioQtdParcela": 36,
-      "id": 1
-    },
-    {
-      "listaNomes": "EDY",
-      "listaProfissao": "dev",
-      "listaCpf": "255.632.232-33",
-      "listaEmail": "ed@gmail.com",
-      "listaNascimento": "Sat Sep 27 2008 00:00:00 GMT-0300 (Hora padrão de Brasília)",
-      "listaCep": "88.473-273",
-      "listaCelular": "(83) 98630-7331",
       "formularioTipo": "Sobrado",
       "formularioRenda": 10000,
       "formularioValor": 100000,
@@ -62,6 +47,22 @@
       "formularioQtdParcela": 36,
       "dataDeSimulacao": "2021-11-22T13:20:34.392Z",
       "id": 4
+    },
+    {
+      "listaNomes": "TESTANDO SIMULA",
+      "listaProfissao": "okok",
+      "listaCpf": "945.312.344-54",
+      "listaEmail": "testt@gmail.com",
+      "listaNascimento": "1983-02-23T03:00:00.000Z",
+      "listaCep": "23.131-122",
+      "listaCelular": "(35) 97423-2312",
+      "formularioTipo": "Casa Geminada",
+      "formularioRenda": 3000,
+      "formularioValor": 233444.44,
+      "formularioValorEntrada": 1,
+      "formularioQtdParcela": 10,
+      "dataDeSimulacao": "2021-11-23T12:43:28.711Z",
+      "id": 5
     }
   ],
   "tiposImoveis": [

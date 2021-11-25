@@ -1,0 +1,3 @@
+sincronizando.service("sincronizacaoServiceListagem", function(){
+    
+})

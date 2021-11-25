@@ -9,18 +9,62 @@
                         <h6>Dados do proponente</h6>
                         <tr>
                             <th>Nome do proponente</th>
+                            <th>Profissao</th>
+                            <th>CPF</th>
+                            
+
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>{{atualizaListagem.listaCadastros.listaNomes}}</td>
+                            <td>{{atualizaListagem.listaCadastros.listaProfissao}}</td>
+                            <td>{{atualizaListagem.listaCadastros.listaCpf}}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Email do proponente</th>
+                            <th>Data de nascimento</th>
+                            <th>CEP</th>
+                        </tr>
+
+                        <tr>
+                            <td>{{atualizaListagem.listaCadastros.listaEmail}}</td>
+                            <td>{{atualizaListagem.listaCadastros.listaNascimento}}</td>
+                            <td>{{atualizaListagem.listaCadastros.listaCep}}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Celular</th>
+                        </tr>
+
+                        <tr>
+                            <td>{{atualizaListagem.listaCadastros.listaCelular}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </br>
+                <table>
+                    <thead>
+                        <h6>Dados do imovel</h6>
+                        <tr>
+                            <th>Tipo do imovel</th>
+                            <th>Renda mensal</th>
+                            <th>Valor do imóvel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{atualizaListagem.listaCadastros.formularioTipo}}</td>
+                            <td>{{atualizaListagem.listaCadastros.formularioRenda}}</td>
+                            <td>{{atualizaListagem.listaCadastros.formularioValor}}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELAR</button>
+              <button type="button" class="btn btn-primary">EXCLUIR</button>
             </div>
         </div>
     </div>

@@ -29,11 +29,11 @@
                     <td>{{listaCadastros.formularioValor}}</td>
                     <td> {{listaCadastros.formularioQtdParcela}}<p>parcelas</p> </td>
                     <td>
-                    <button  id="btnVisualPropostaHistorico" ng-click="dadosParaModal()" data-bs-toggle="modal"  data-bs-target="#modalexcluirUsuario" class="btn">
+                    <button  id="btnVisualPropostaHistorico" ng-click="dadosParaModal(listaCadastros)" data-bs-toggle="modal"  data-bs-target="#exampleModalLong" class="btn">
                         <img src="../../../app/img/visualizar.png">
                      
                     </button>
-                    <button id="btnExcluirPropostaHistorico" class="btn">
+                    <button   id="btnExcluirPropostaHistorico" ng-click="dadosParaModal(listaCadastros)"  data-bs-toggle="modal"  data-bs-target="#exampleModalLong" class="btn">
                         <img src="../../../app/img/excluir.png">
                     </button>
                     </td>
@@ -43,34 +43,4 @@
         </form>
         </section>
     </main>
-    <div id="modalexcluirUsuario"  class="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h6 class="modal-title">Atenção <p></p>
-               <table >
-                   <thead>
-                       <tr>
-                           <td>Nome do proponente</td>
-                      
-                       </tr>
-                   </thead>
-                   <tbody >
-                       <tr ng-repeat="listaCadastros in bancoDeListaDados" >
-                       
-                        <td>{{listaCadastros.listaNomes}}</td>
-                       </tr>
-                   </tbody>
-               </table>
-                
-              </h6>
-            </div>
-            <div class="container">
-              <button id="botaoCancelamento" type="button" class="btn btn-secondary item" data-dismiss="modal"  onclick="location.href=document.referrer">Cancelar</button>
-              <button id="botaoExcluir" type="button" class="btn btn-primary item" ng-click="excluirDefinitivo(lista)">Excluir</button>
-            </div>
-          </div>
-        </div>
-      </div>
- 
 </body>

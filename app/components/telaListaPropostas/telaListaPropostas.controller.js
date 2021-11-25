@@ -16,15 +16,9 @@ sincronizando.controller('ctrlListaPropostas',function($scope,$location, $http){
     })
     
 
-    $scope.dadosParaModal = function(){
+    $scope.dadosParaModal = function(dadosParaModal){
         
-        $http.get('http://localhost:3000/bancoDeListaDados/').
-        then(function (res) {
-            (console.log(res))
-    
-            $scope.bancoDeListaDados = res.data
-            console.log('verificando dentro do get 2',  $scope.bancoDeListaDados)
-        })
+        sincronizacaoServiceListagem.listaCadastros = dadosParaModal;
 
     }
 

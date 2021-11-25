@@ -29,13 +29,17 @@
                     <td>{{listaCadastros.formularioValor}}</td>
                     <td> {{listaCadastros.formularioQtdParcela}}<p>parcelas</p> </td>
                     <td>
-                    <button  id="btnVisualPropostaHistorico" ng-click="dadosParaModal(listaCadastros)" data-bs-toggle="modal"  data-bs-target="#exampleModalLong" class="btn">
+                    <button  id="btnVisualPropostaHistorico" ng-click="dadosParaModal(listaCadastros)" data-bs-toggle="modal"  data-bs-target="#visualizaohistorico" class="btn">
                         <img src="../../../app/img/visualizar.png">
                      
                     </button>
-                    <button   id="btnExcluirPropostaHistorico" ng-click="dadosParaModal(listaCadastros)"  data-bs-toggle="modal"  data-bs-target="#exampleModalLong" class="btn">
-                        <img src="../../../app/img/excluir.png">
-                    </button>
+                    
+                    </td>
+                    <!-- posso deixar tanto em uma td quanto em duas td -->
+                    <td>
+                        <button   id="btnExcluirPropostaHistorico" ng-click="dadosParaModal(listaCadastros)"  data-bs-toggle="modal"  data-bs-target="#modalExcluirListagem" class="btn">
+                            <img src="../../../app/img/excluir.png">
+                        </button>
                     </td>
                   </tr> 
                </tbody>

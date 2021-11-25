@@ -17,7 +17,7 @@ sincronizando.controller('ctrlListaPropostas',function($scope,$location, $http, 
     
 
     $scope.dadosParaModal = function(dadosParaModal){
-        
+        // estou passando como objeto o listaCadastros
         sincronizacaoServiceListagem.listaCadastros = dadosParaModal;
 
     }

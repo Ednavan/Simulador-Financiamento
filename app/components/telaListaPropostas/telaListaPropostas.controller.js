@@ -1,4 +1,4 @@
-sincronizando.controller('ctrlListaPropostas',function($scope,$location, $http){
+sincronizando.controller('ctrlListaPropostas',function($scope,$location, $http, sincronizacaoServiceListagem){
     $scope.headTituloInicial = "Histórico de propostas"
 
     var historicoDadosPropostas = $location.search()

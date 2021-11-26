@@ -3,7 +3,7 @@ sincronizando.controller('ctrlTelaDadosProponent', function($scope,$location){
 
     $scope.emailFormat = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
 
-    $scope.celFormat  = /^(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})$/;
+    $scope.celFormat  = /^(\([0-9]{2}\))\s([0-9]{1})?([0-9]{4})-([0-9]{4})$/;
     // $scope.celFormat  = /^[0-9]{2}-([0-9]{8}|[0-9]{9})$/;
 
     

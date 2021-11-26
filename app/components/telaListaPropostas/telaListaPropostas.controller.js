@@ -22,7 +22,19 @@ sincronizando.controller('ctrlListaPropostas',function($scope,$location, $http, 
 
     }
 
-   
+    $scope.excluindoProponente = function(){
+        $http({
+            url:'http://localhost:3000/bancoDeListaDados/' + sincronizacaoServiceListagem.listaCadastros.id,
+            method:'delete',
+            headers:{
+                "Content-Type": "application/json"
+            }
+        }).then(function(res){
+            console.log("sucess", res)
+        }).catch(function (tratamentoErro){
+            console.log('failed',tratamentoErro)
+        });
+    }
     
     $scope.irParaHome = function(){
 

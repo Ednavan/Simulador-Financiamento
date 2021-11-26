@@ -20,7 +20,8 @@ sincronizando.controller('ctrlStatusReprovado', function($scope, $location){
 
   $scope.calculandoParcelaInicial = parseFloat($scope.sub * ((100 + (10) * parseFloat(ResultTotalValue.dados3/12)))/100)/  ResultTotalValue.dados3
   console.log (parseFloat($scope.calculandoParcelaInicial))
-    $scope.irParaHome = function(){
+    
+  $scope.irParaHome = function(){
 
         $location.path('/telaInicio')
     }

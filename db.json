@@ -1,22 +1,6 @@
 {
   "bancoDeListaDados": [
     {
-      "listaNomes": "EDY",
-      "listaProfissao": "dev",
-      "listaCpf": "255.632.232-33",
-      "listaEmail": "ed@gmail.com",
-      "listaNascimento": "Sat Sep 27 2008 00:00:00 GMT-0300 (Hora padrão de Brasília)",
-      "listaCep": "88.473-273",
-      "listaCelular": "(83) 98630-7331",
-      "formularioTipo": "Flat",
-      "formularioRenda": 10000,
-      "formularioValor": 100000,
-      "formularioValorEntrada": 20000,
-      "formularioQtdParcela": 36,
-      "dataDeSimulacao": "2021-11-22T00:34:40.324Z",
-      "id": 3
-    },
-    {
       "listaNomes": "TESTANDO SIMULA",
       "listaProfissao": "okok",
       "listaCpf": "945.312.344-54",

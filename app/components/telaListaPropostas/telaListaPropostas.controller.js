@@ -22,7 +22,7 @@ sincronizando.controller('ctrlListaPropostas',function($scope,$location, $http, 
 
     }
 
-    
+   
     
     $scope.irParaHome = function(){
 
@@ -38,9 +38,3 @@ function printContent(el){
     document.body.innerHTML = restorepage;
 }
 
-// $('#visualizaohistorico').on('shown.bs.modal', function () {
-//     $('#visualizaohistorico').trigger('focus')
-//   })
-jQuery(document).ready(function(e) {
-    jQuery('#visualizaohistorico').trigger('click');
-});

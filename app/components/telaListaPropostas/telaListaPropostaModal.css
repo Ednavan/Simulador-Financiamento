@@ -1,4 +1,11 @@
 #visualizaohistorico{
 
+    margin-top: 0px;
  
+}
+
+#impressãoDocumentacao{
+    position: absolute;
+    right: 10px;
+    top: 5px;
 }

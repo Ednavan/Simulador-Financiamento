@@ -33,11 +33,11 @@
                     <th>{{listaCadastros.formularioValor}}</th>
                     <th> {{listaCadastros.formularioQtdParcela}}<p>parcelas</p> </th>
                     <td>
-                    <a  id="btnVisualPropostaHistorico" ng-click="dadosParaModal(listaCadastros)" data-bs-toggle="modal"  data-bs-target="#visualizaohistorico" >
+                    <button  id="btnVisualPropostaHistorico" ng-click="dadosParaModal(listaCadastros)" data-toggle="modal" data-target="#visualizaohistorico" class="btn" >
                         <img src="../../../app/img/visualizar.png">
                      
-                    </a>
-                    <button   id="btnExcluirPropostaHistorico" ng-click="dadosParaModal(listaCadastros)"  data-bs-toggle="modal"  data-bs-target="#modalExcluirListagem" class="btn">
+                    </button>
+                    <button   id="btnExcluirPropostaHistorico" ng-click="dadosParaModal(listaCadastros)" data-toggle="modal" data-target="#modalExcluirListagem" class="btn">
                         <img src="../../../app/img/excluir.png">
                     </button>
                     </td>

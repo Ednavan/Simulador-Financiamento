@@ -5,6 +5,9 @@
         <div class="h1TituloPrincipal">
             <h1>Simulador de Financiamentos</h1>
         </div>
+        <div id="stylebuttonHistoricoPoropostas">
+            <button id="btnHistoricoPropostas" class="btn btn-primary" ng-click="historicoPropostas()">HISTÓRICO DE PROPOSTAS</button>
+        </div>
     </header>
     <nav id="tipoDeCadastramento">
         <h2 id="dadosSubtitulo">HISTÓRICO DE PROPOSTAS</h2>
@@ -13,34 +16,32 @@
     <main id="conteudo-principal">
         <section  id="formularioImovel">
         <form>
-           <table>
-               <thead>
-                   <tr>
-                       <td> Nome do proponente  |  </td >
-                       <td> Data da simulação </td >
-                       <td> | Valor total do Imóvel |</td>
+           <table  class="table">
+               <thead id="menuTable" >
+                   <tr id=subTableTitulos>
+                       
+                       <td> Nome do proponente </td>
+                       <td> Data da simulação </td>
+                       <td> Valor total do Imóvel</td>
                        <td> Número de parcelas </td>
                    </tr>
                </thead>
                <tbody>
                   <tr ng-repeat="listaCadastros in bancoDeListaDados">
-                    <td>{{listaCadastros.listaNomes}}</td>
-                    <td>{{listaCadastros.dataDeSimulacao | date: 'dd/MM/yyyy HH:mm'}}</td>
-                    <td>{{listaCadastros.formularioValor}}</td>
-                    <td> {{listaCadastros.formularioQtdParcela}}<p>parcelas</p> </td>
+                    <th>{{listaCadastros.listaNomes}}</th>
+                    <th>{{listaCadastros.dataDeSimulacao | date: 'dd/MM/yyyy HH:mm'}}</th>
+                    <th>{{listaCadastros.formularioValor}}</th>
+                    <th> {{listaCadastros.formularioQtdParcela}}<p>parcelas</p> </th>
                     <td>
-                    <button  id="btnVisualPropostaHistorico" ng-click="dadosParaModal(listaCadastros)" data-bs-toggle="modal"  data-bs-target="#visualizaohistorico" class="btn">
+                    <a  id="btnVisualPropostaHistorico" ng-click="dadosParaModal(listaCadastros)" data-bs-toggle="modal"  data-bs-target="#visualizaohistorico" >
                         <img src="../../../app/img/visualizar.png">
                      
+                    </a>
+                    <button   id="btnExcluirPropostaHistorico" ng-click="dadosParaModal(listaCadastros)"  data-bs-toggle="modal"  data-bs-target="#modalExcluirListagem" class="btn">
+                        <img src="../../../app/img/excluir.png">
                     </button>
-                    
                     </td>
                     <!-- posso deixar tanto em uma td quanto em duas td -->
-                    <td>
-                        <button   id="btnExcluirPropostaHistorico" ng-click="dadosParaModal(listaCadastros)"  data-bs-toggle="modal"  data-bs-target="#modalExcluirListagem" class="btn">
-                            <img src="../../../app/img/excluir.png">
-                        </button>
-                    </td>
                   </tr> 
                </tbody>
            </table>

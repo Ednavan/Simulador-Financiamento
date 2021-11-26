@@ -23,9 +23,24 @@ sincronizando.controller('ctrlListaPropostas',function($scope,$location, $http, 
     }
 
     
-
+    
     $scope.irParaHome = function(){
 
         $location.path('/telaInicio')
     }
 })
+
+function printContent(el){
+    var restorepage = document.body.innerHTML;
+    var printContent = document.getElementById(el).innerHTML;
+    document.body.innerHTML = printContent;
+    window.print();
+    document.body.innerHTML = restorepage;
+}
+
+// $('#visualizaohistorico').on('shown.bs.modal', function () {
+//     $('#visualizaohistorico').trigger('focus')
+//   })
+jQuery(document).ready(function(e) {
+    jQuery('#visualizaohistorico').trigger('click');
+});

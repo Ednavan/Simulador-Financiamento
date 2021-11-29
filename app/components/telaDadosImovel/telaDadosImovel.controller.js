@@ -63,12 +63,11 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
         // console.log('AQUIIII',$scope.verificaSeEntradaMenorQueVintePorcento().analisaValorEntrada)
      
     
-            $scope.data.financiamentoTotal = (valorImovel - valorEntrada)
-            console.log('MOSTRAAARRRRR: ',   $scope.data.financiamentoTotal )
+        $scope.data.financiamentoTotal = (valorImovel - valorEntrada)
+        console.log('MOSTRAAARRRRR: ',   $scope.data.financiamentoTotal )
 
         
-        // $scope.financiamentoTotal = (valorImovel - valorEntrada)
-        // console.log('MOSTRAAARRRRR: ',  $scope.data.expressaoFhgj )
+        
    
 
         var expressaoFormula = ((( $scope.data.financiamentoTotal+ ((($scope.data.qtdParcelas / 12) * 10 / 100) 
@@ -85,6 +84,9 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
         }
 
         console.log('Apos o if',expressaoFormula)
+
+        $scope.totalDeJuros = expressaoFormula
+        console.log('MOSTRANDO O VALOR TOTAL COM JUROS: ',  $scope.totalDeJuros )
      
         var identificaDadosCadastrados = {
             listaNomes: verDados.dadosDoNome,
@@ -99,7 +101,8 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
             formularioValor: $scope.converterNumero($scope.data.valor),
             formularioValorEntrada: $scope.converterNumero($scope.data.valorEntrada),
             formularioQtdParcela: $scope.data.qtdParcelas,
-            operacaoFinanciamentoTotal:  $scope.data.financiamentoTotal, 
+            operacaoFinanciamentoTotal:  $scope.data.financiamentoTotal,
+            valorTotalJuros:  $scope.totalDeJuros,
             dataDeSimulacao: $scope.dataSimulacao = new Date(),
         }
         $location.search(identificaDadosCadastrados)

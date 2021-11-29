@@ -1,5 +1,10 @@
 sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $http) {
     $scope.tituloHeadPageImovel = "Dados do Imóvel"
+  
+    // $scope.financiamentoTotal = 10;
+    // console.log('valor deeeeeeeeeeeeeeeeeeee:',  $scope.financiamentoTotal)
+
+   
 
     $scope.converterNumero = function(valor){
         // criar variável para retornar
@@ -17,25 +22,11 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
         console.log(verDados)
         console.log('segunda tela')
         var verDados = $location.search()
-        var identificaDadosCadastrados = {
-            listaNomes: verDados.dadosDoNome,
-            listaProfissao: verDados.dadosDaProfissao,
-            listaCpf: verDados.dadosDoCpf,
-            listaEmail: verDados.dadosDoEmail,
-            listaNascimento: verDados.dadosDoNascimento,
-            listaCep: verDados.dadosDoCep,
-            listaCelular: verDados.dadosDoCelular,
+        var identificaDadosCadastrados = {}
 
-            formularioTipo: $scope.data.imovel,
-            formularioRenda: $scope.converterNumero($scope.data.renda),
-            formularioValor: $scope.converterNumero($scope.data.valor),
-            formularioValorEntrada: $scope.converterNumero($scope.data.valorEntrada),
-            formularioQtdParcela: $scope.data.qtdParcelas,
-            dataDeSimulacao: $scope.dataSimulacao = new Date
-        }
-
+        
         $location.search(identificaDadosCadastrados)
-        console.log(identificaDadosCadastrados)
+        console.log('DADOS INTERNO QUE VAI PRO DB',identificaDadosCadastrados)
         // console.log($scope.data.valor)
         // console.log($scope.data.valorEntrada)
     
@@ -46,8 +37,9 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
         var valorImovel = $scope.converterNumero($scope.data.valor);
         var valorEntrada = $scope.converterNumero($scope.data.valorEntrada);
     
+    
         
-        
+        // calculo de valor de entrada dos 20%
         var vintePorcento = (0.2 * valorImovel);
         console.log('vinte por cento: ', vintePorcento)
         $scope.novoCalculo = function(){
@@ -69,12 +61,18 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
         // }
        
         // console.log('AQUIIII',$scope.verificaSeEntradaMenorQueVintePorcento().analisaValorEntrada)
-
+     
     
+            $scope.data.financiamentoTotal = (valorImovel - valorEntrada)
+            console.log('MOSTRAAARRRRR: ',   $scope.data.financiamentoTotal )
 
+        
+        // $scope.financiamentoTotal = (valorImovel - valorEntrada)
+        // console.log('MOSTRAAARRRRR: ',  $scope.data.expressaoFhgj )
+   
 
-        var expressaoFormula = (((valorImovel - valorEntrada + ((($scope.data.qtdParcelas / 12) * 10 / 100) 
-        * (valorImovel - valorEntrada))) / ($scope.data.qtdParcelas)))
+        var expressaoFormula = ((( $scope.data.financiamentoTotal+ ((($scope.data.qtdParcelas / 12) * 10 / 100) 
+        * ( $scope.data.financiamentoTotal ))) / ($scope.data.qtdParcelas)))
        
 
         if( expressaoFormula <= rendaMensal * 0.3) {
@@ -87,9 +85,29 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
         }
 
         console.log('Apos o if',expressaoFormula)
-       
+     
+        var identificaDadosCadastrados = {
+            listaNomes: verDados.dadosDoNome,
+            listaProfissao: verDados.dadosDaProfissao,
+            listaCpf: verDados.dadosDoCpf,
+            listaEmail: verDados.dadosDoEmail,
+            listaNascimento: verDados.dadosDoNascimento,
+            listaCep: verDados.dadosDoCep,
+            listaCelular: verDados.dadosDoCelular,
+            formularioTipo: $scope.data.imovel,
+            formularioRenda: $scope.converterNumero($scope.data.renda),
+            formularioValor: $scope.converterNumero($scope.data.valor),
+            formularioValorEntrada: $scope.converterNumero($scope.data.valorEntrada),
+            formularioQtdParcela: $scope.data.qtdParcelas,
+            operacaoFinanciamentoTotal:  $scope.data.financiamentoTotal, 
+            dataDeSimulacao: $scope.dataSimulacao = new Date(),
+        }
+        $location.search(identificaDadosCadastrados)
+
+
+     
         $http({
-            url: 'http://localhost:3000/bancoDeListaDados/',
+            url: 'http://localhost:3000/bancoDeListaDados/' ,
             method: 'POST',
             data: identificaDadosCadastrados
         }).then(function () {
@@ -99,6 +117,7 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
             console.log('não foi possivel estabelecer conexão')
         });
         
+        // visualizando data de simulacao
         console.log('DATA QUE FOI SALVO',   $scope.dataSimulacao)
     }
 
@@ -108,12 +127,8 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
 
         $scope.bancoDeListaDados = res.identificaDadosCadastrados
     })
-    $scope.editar = function (dd) {
-
-        $scope.myVar = dd;
-        console.log('edit', $scope.myVar)
-
-    }
+    
+ 
     
     //     $scope.FormulaDosVintePorCento = function(){
     //         if (!$scope.data) {
@@ -128,8 +143,6 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
     //         console.log(entrada, imovel, entrada < (0.2 * imovel));
     //     return entrada < (0.2 * imovel) 
     // }
-
-   
 
     
     $scope.voltarPage = function () {

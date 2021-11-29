@@ -87,6 +87,7 @@
                         <th>taxa ao ano</th>
                         <th>valor total financiado</th>
                         <th>valor total com juros</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -94,6 +95,19 @@
                         <td>10%</td>
                         <td>{{atualizaListagem.listaCadastros.operacaoFinanciamentoTotal}}</td>
                         <td>{{atualizaListagem.listaCadastros.valorTotalJuros}}</td>
+                        
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>Valor da primeira parcela</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>{{atualizaListagem.listaCadastros.visualizandoStatusDeResultado}}</td>
                     </tr>
                 </tbody>
             </table>

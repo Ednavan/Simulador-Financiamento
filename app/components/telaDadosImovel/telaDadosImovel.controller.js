@@ -64,23 +64,25 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
      
     
         $scope.data.financiamentoTotal = (valorImovel - valorEntrada)
-        console.log('MOSTRAAARRRRR: ',   $scope.data.financiamentoTotal )
+      
 
+        $scope.mostrarStatus={};
         
-        
-   
+        console.log('VISUALIZANDO STATUS DA SIMULACAO',$scope.mostrarStatus)
 
         var expressaoFormula = ((( $scope.data.financiamentoTotal+ ((($scope.data.qtdParcelas / 12) * 10 / 100) 
         * ( $scope.data.financiamentoTotal ))) / ($scope.data.qtdParcelas)))
        
 
         if( expressaoFormula <= rendaMensal * 0.3) {
+            $scope.mostrarStatus = 'Aprovado'
             $location.search(identificaDadosCadastrados)
             console.log('Ja está no if',expressaoFormula)
             $location.path('/statusAprovado')
         }else{
             console.log('Ja está no if',expressaoFormula)
             $location.path('/statusReprovado')
+            $scope.mostrarStatus = 'Reprovado'
         }
 
         console.log('Apos o if',expressaoFormula)
@@ -103,6 +105,7 @@ sincronizando.controller('ctrlTelaDadosImovel', function ($scope, $location, $ht
             formularioQtdParcela: $scope.data.qtdParcelas,
             operacaoFinanciamentoTotal:  $scope.data.financiamentoTotal,
             valorTotalJuros:  $scope.totalDeJuros,
+            visualizandoStatusDeResultado: $scope.mostrarStatus,
             dataDeSimulacao: $scope.dataSimulacao = new Date(),
         }
         $location.search(identificaDadosCadastrados)

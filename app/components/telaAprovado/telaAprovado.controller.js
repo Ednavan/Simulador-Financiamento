@@ -11,7 +11,7 @@ sincronizando.controller('ctrlStatusAprovado', function($scope, $location){
       dado1: DadosListagemValorTotal.formularioValor,
       dado2: DadosListagemValorTotal.formularioValorEntrada,
       dados3: DadosListagemValorTotal.formularioQtdParcela,
-      dados4: DadosListagemValorTotal.MOSTRAR
+      
   }
 
   

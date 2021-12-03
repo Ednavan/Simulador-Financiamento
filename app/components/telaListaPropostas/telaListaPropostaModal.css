@@ -5,7 +5,24 @@
 }
 
 #impressãoDocumentacao{
-    position: absolute;
-    right: 10px;
-    top: 5px;
+   
+    margin-left: 92% ;
+    top: 40px;
 }
+
+/* ocultando informações do body e mostrando apenas conteudos do modal que deseja imprimir */
+@media screen {
+    #printSection {
+        display: none;
+    }
+  }
+  
+  @media print {
+    body * {
+      visibility:hidden;
+    }
+    #printSection, #printSection * {
+      visibility:visible;
+    }
+    
+  }

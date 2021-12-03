@@ -1,5 +1,8 @@
 sincronizando.controller('ctrlListaPropostas',function($scope,$location, $http, sincronizacaoServiceListagem){
     $scope.headTituloInicial = "Histórico de propostas"
+  
+    $scope.test = "bem vindo"
+
 
     var historicoDadosPropostas = $location.search()
     console.log(historicoDadosPropostas)
@@ -41,12 +44,3 @@ sincronizando.controller('ctrlListaPropostas',function($scope,$location, $http, 
         $location.path('/telaInicio')
     }
 })
-
-function printContent(el){
-    var restorepage = document.body.innerHTML;
-    var printContent = document.getElementById(el).innerHTML;
-    document.body.innerHTML = printContent;
-    window.print();
-    document.body.innerHTML = restorepage;
-}
-

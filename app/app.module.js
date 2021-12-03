@@ -1,1 +1,1 @@
-var sincronizando = angular.module('sincronizando', ['ngRoute', 'cur.$mask'])
+var sincronizando = angular.module('sincronizando', ['ngRoute', 'cur.$mask', 'ngPrint'])
